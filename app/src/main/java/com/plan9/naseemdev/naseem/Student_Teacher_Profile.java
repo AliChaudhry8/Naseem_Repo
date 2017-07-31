@@ -173,20 +173,20 @@ public class Student_Teacher_Profile extends AppCompatActivity implements View.O
                 break;
             }
             case R.id.st_camera: {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                     boolean permission = getCameraPermission();
                     if (permission) {
                         Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
                         startActivityForResult(intent, CODE_CAMERA);
                     }
-                } else {
+                } else {*/
                     Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
                     startActivityForResult(intent, CODE_CAMERA);
-                }
+                //}
                 break;
             }
             case R.id.st_gallery: {
-                Toast.makeText(getApplicationContext(), "gALLERY", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "GALLERY", Toast.LENGTH_LONG).show();
                 break;
             }
         }
@@ -380,7 +380,8 @@ public class Student_Teacher_Profile extends AppCompatActivity implements View.O
 
         user.setTelephone(telephone.getText().toString());
         user.setAvatar(avatar);
-        Toast.makeText(getApplicationContext(), "AVatar: " + user.getAvatar(), Toast.LENGTH_LONG).show();
+
+
 
         return i;
     }
@@ -457,6 +458,9 @@ public class Student_Teacher_Profile extends AppCompatActivity implements View.O
                         map.put(Constants.Principal_Key_Update_User_Role, String.valueOf(user.getRole()));
                         map.put(Constants.Principal_Key_Update_User_Telephone, String.valueOf(user.getTelephone()));
                         map.put(Constants.Principal_Key_Update_User_Avatar, String.valueOf(user.getAvatar()));
+                        map.put(Constants.Principal_Key_Update_User_Password, String.valueOf(user.getPassword()));
+                        map.put(Constants.Principal_Key_Update_User_Password_Confirmation, String.valueOf(user.getPassword_confirmation()));
+
                         return map;
                     }
                 };
