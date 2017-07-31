@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingTop="40dp"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/student_bottom_sheet"
+    android:clickable="true"
+    app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
+    android:background="@color/color_transparent_90_p"
+    tools:showIn="@layout/app_bar_student">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    </LinearLayout>
+</ScrollView>

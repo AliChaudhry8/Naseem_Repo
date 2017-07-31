@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <!-- Taimoor -->
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">120dp</dimen>
+
+    <dimen name="main_activity_text_size">35dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+    <!-- SignIn SignUp Fragment Dimens. -->
+    <dimen name="signIn_input_layout_margin">15dp</dimen>
+    <dimen name="signIn_edit_text_padding">7dp</dimen>
+    <dimen name="signIn_button_padding">30dp</dimen>
+    <dimen name="signIn_button_paddingTB">-15dp</dimen>
+    <dimen name="signIn_remember_me_margin_top">20dp</dimen>
+    <dimen name="signIn_forgot_password_margin_top">5dp</dimen>
+    <dimen name="signIn_forgot_password_margin_bottom">50dp</dimen>
+    <dimen name="signUp_spinner_padding">10dp</dimen>
+    <dimen name="signUp_spinner_margin">15dp</dimen>
+    <dimen name="signUp_progress_bar_margin">25dp</dimen>
+    <dimen name="signUp_spinner_item_padding">5dp</dimen>
+    <dimen name="signUp_spinner_item_margin">6dp</dimen>
+    <dimen name="signUp_spinner_item_test_size">15dp</dimen>
+    <dimen name="signIn_remember_me_forgot_text_size">15dp</dimen>
+    <dimen name="signIn_remember_me_forgot_padding">5dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+
+    <!-- ***************** Dimens Used in Student Activity ***************** -->
+        <!-- Student Activity Content Main-->
+    <dimen name="student_content_button_layout_height">40dp</dimen>
+    <dimen name="user_content_main_button_panel_margin">5dp</dimen>
+    <integer name="user_content_main_button_panel_weight_sum">3</integer>
+    <integer name="user_content_main_button_panel_weight">1</integer>
+    <dimen name="user_content_main_fragment_panel_margin">3dp</dimen>
+    <dimen name="student_profile_pic_WH">90dp</dimen>
+    <dimen name="student_profile_pic_layout_margin">4dp</dimen>
+    <dimen name="student_profile_text_view_margin">2dp</dimen>
+    <dimen name="student_profile_text_view_layout_margin_left">4dp</dimen>
+    <!-- Test Fragment Student Activity-->
+    <dimen name="test_fragment_title_margin">6dp</dimen>
+    <dimen name="test_fragment_text_size">19dp</dimen>
+    <!-- Test List View Item Test Fragment Student Activity-->
+    <dimen name="test_list_view_item_margin">7dp</dimen>
+    <dimen name="test_list_view_item_padding">3dp</dimen>
+    <dimen name="test_list_view_item_text_size">19dp</dimen>
+    <dimen name="test_list_view_divider_height">10dp</dimen>
+    <dimen name="test_list_view_margin">10dp</dimen>
+    <dimen name="test_fragment_relative_layout_margin">10dp</dimen>
+
+
+    <!-- Games Fragment Student Activity  -->
+    <dimen name="game_fragment_divider_height">10dp</dimen>
+    <dimen name="game_fragment_list_margin">5dp</dimen>
+    <dimen name="game_fragment_text_view_margin">5dp</dimen>
+    <dimen name="game_fragment_list_padding">5dp</dimen>
+    <dimen name="game_fragment_text_view_padding">3dp</dimen>
+    <dimen name="game_fragment_text_view_text_size">20dp</dimen>
+
+    <!-- Video Fragment Student Activity -->
+    <dimen name="video_fragment_thumb_margin">4dp</dimen>
+    <dimen name="video_fragment_thumb_padding">5dp</dimen>
+    <dimen name="video_fragment_thumb_W">65dp</dimen>
+    <dimen name="video_fragment_thumb_H">70dp</dimen>
+    <dimen name="video_fragment_thumb_progress_bar_WH">30dp</dimen>
+    <dimen name="video_fragment_thumb_progress_bar_margin">7dp</dimen>
+
+    <!-- Student Profile Activity -->
+    <dimen name="profile_collapsing_toolbar">350dp</dimen>
+    <dimen name="profile_progress_margin_top">120dp</dimen>
+    <dimen name="profile_floating_action_camera_margin_right">12dp</dimen>
+    <dimen name="profile_floating_action_gallery_margin_right">90dp</dimen>
+    <dimen name="profile_label_margin">12dp</dimen>
+    <dimen name="profile_label_margin_top">20dp</dimen>
+    <dimen name="profile_text_size">16dp</dimen>
+    <dimen name="profile_text_size_password_blank">12dp</dimen>
+    <dimen name="profile_password_margin_top">-8dp</dimen>
+
+    <!-- Show Test Activity -->
+    <dimen name="show_test_activity_divider_height">5dp</dimen>
+    <dimen name="show_test_activity_list_margin">5dp</dimen>
+    <dimen name="show_test_activity_list_padding">5dp</dimen>
+    <dimen name="show_test_activity_marks_padding">3dp</dimen>
+    <dimen name="show_test_activity_loading_margin">20dp</dimen>
+    <dimen name="show_test_activity_marks_width">55dp</dimen>
+    <dimen name="show_test_activity_text_size">15dp</dimen>
+    <dimen name="show_test_activity_label_margin">8dp</dimen>
+    <dimen name="show_test_activity_label_text_size">18dp</dimen>
+    <dimen name="show_test_activity_horizontal_line_height">2dp</dimen>
+    <dimen name="show_test_activity_horizontal_line_margin">7dp</dimen>
+    <dimen name="show_test_activity_student_marks_margin">5dp</dimen>
+    <!-- Take Test Activity -->
+    <dimen name="take_test_activity_time_margin">3dp</dimen>
+
+    <!-- ************************************* -->
+    <!-- ******** Principal Activity ********* -->
+    <!-- ************************************* -->
+
+    <!-- Principal Activity Student and Teacher Fragment -->
+    <dimen name="principal_student_teacher_image_WH">68dp</dimen>
+    <dimen name="principal_student_teacher_image_margin">5dp</dimen>
+    <dimen name="principal_student_teacher_linear_layout_margin">3dp</dimen>
+    <dimen name="principal_student_teacher_progress_margin">10dp</dimen>
+    <dimen name="principal_student_teacher_card_view_margin">2dp</dimen>
+    <dimen name="principal_student_teacher_card_view_corner">7dp</dimen>
+    <integer name="principal_content_main_button_panel_weight_sum">2</integer>
+    <dimen name="profile_gender_margin">5dp</dimen>
+
+
+    <!-- Custom Dialog Dimensions -->
+    <dimen name="dialog_text_size">16dp</dimen>
+    <dimen name="dialog_margin">4dp</dimen>
+    <dimen name="dialog_margin_extra">8dp</dimen>
+</resources>

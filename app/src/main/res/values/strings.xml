@@ -1,0 +1,202 @@
+<resources>
+    <string name="app_name">Naseem</string>
+    <string name="string_reload_schools_sections">Failed to load Schools and Sections.\nTry Again</string>
+    <string name="string_reload_tests">Failed to load Tests.\nTry Again</string>
+    <string name="string_reload_cartoons">Failed to load Cartoons.\nTry Again</string>
+    <string name="string_reload_test_taken">Failed to load Test.\nTry Again</string>
+
+
+    <!-- Strings Used in Main Activity -->
+    <string name="string_n">N</string>
+    <string name="string_a">A</string>
+    <string name="string_s">S</string>
+    <string name="string_e">E</string>
+    <string name="string_m">M</string>
+
+    <!-- Strings Used in SignIn and SignUp Fragment -->
+    <string name="string_username">Username</string>
+    <string name="string_password">Password</string>
+    <string name="string_password_confirm">Confirm Password</string>
+    <string name="string_signin">Sign In</string>
+    <string name="string_signup">Sign Up</string>
+    <string name="string_remember_me">Remember Me</string>
+    <string name="string_forgot_password">Forgot Password?</string>
+    <string name="string_loading_school_section">Loading Schools and Sections . . .</string>
+    <string name="title_activity_sign_up_sign_in">SignUpSignIn</string>
+    <string name="title_activity_user">User</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+
+    <!-- ***************** Strings Used in Student Activity ***************** -->
+    <!-- Student Activity Content Main-->
+    <string name="string_games">Games</string>
+    <string name="string_videos">Videos</string>
+    <string name="string_test">Test</string>
+    <string name="title_activity_student"></string>
+    <!-- Test Fragment Student Activity -->
+    <string name="string_test_taken">TEST TAKEN</string>
+    <string name="string_test_schedule">TEST SCHEDULE</string>
+    <string name="string_test_view">View</string>
+    <string name="string_loading_test_taken">Loading Test Taken. . .</string>
+    <string name="string_loading_test_schedule">Loading Test Schedule. . .</string>
+    <string name="string_no_test">No tests yet available </string>
+    <string name="string_student_profile">Profile</string>
+    <string name="string_student_logout">Logout</string>
+
+
+    <!-- Student Profile Activity Labels -->
+    <string name="string_label_first_name">First Name</string>
+    <string name="string_label_second_name">Second Name</string>
+    <string name="string_label_user_name">User Name</string>
+    <string name="string_label_email">Email</string>
+    <string name="string_label_school_name">School Name</string>
+    <string name="string_label_section_name">Section Name</string>
+    <string name="string_label_gender">Gender</string>
+    <string name="string_label_role">Role</string>
+    <string name="string_label_age">Age</string>
+    <string name="string_label_telephone">Telephone</string>
+    <string name="string_label_password">Password</string>
+    <string name="string_label_password_blank">(Leave, blank if you don\'t want to change password)</string>
+    <string name="string_label_password_confirmation">Confirm Password</string>
+
+
+
+    <string name="string_select_age">Select Your Age</string>
+
+    <string name="string_loading_test">Loading Test. . .</string>
+    <string name="string_text_questions">Question Answers</string>
+    <string name="string_single_choice_questions">Single Choice Questions</string>
+    <string name="string_multi_choice_questions">Multiple Choice Questions</string>
+    <string name="string_paragraph_questions">Paragraph Questions</string>
+    <string name="string_boolean_questions">True/False Questions</string>
+    <string name="title_activity_principal">Principal</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="string_update_profile">Update</string>
+    <string name="string_request_teacher_access">Request Teacher Access</string>
+    <!-- Strings Principal Activity -->
+    <!-- Principal Content -->
+    <string name="string_principal_students">Students</string>
+    <string name="string_principal_teachers">Teachers</string>
+    <string name="string_principal_tests">Tests</string>
+    <string name="string_reload_students">Failed to load Students.\nTry Again</string>
+    <string name="string_reload_teachers">Failed to load Teachers.\nTry Again</string>
+    <string name="string_reload_profile">Failed to load Profile.\nTry Again</string>
+    <string name="string_loading_profile">Loading Profile</string>
+    <string name="string_male">Male</string>
+    <string name="string_female">Female</string>
+    <string name="string_student">Student</string>
+    <string name="string_teacher">Teacher</string>
+    <string name="string_principal">Principal</string>
+    <string name="string_parent">Parent</string>
+
+    <string-array name="array_age">
+        <item>Select Age</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+        <item>31</item>
+        <item>32</item>
+        <item>33</item>
+        <item>34</item>
+        <item>35</item>
+        <item>36</item>
+        <item>37</item>
+        <item>38</item>
+        <item>39</item>
+        <item>40</item>
+        <item>41</item>
+        <item>42</item>
+        <item>43</item>
+        <item>44</item>
+        <item>45</item>
+        <item>46</item>
+        <item>47</item>
+        <item>48</item>
+        <item>49</item>
+        <item>50</item>
+        <item>51</item>
+        <item>52</item>
+        <item>53</item>
+        <item>54</item>
+        <item>55</item>
+        <item>56</item>
+        <item>57</item>
+        <item>58</item>
+        <item>59</item>
+        <item>60</item>
+        <item>61</item>
+        <item>62</item>
+        <item>63</item>
+        <item>64</item>
+        <item>65</item>
+        <item>66</item>
+        <item>67</item>
+        <item>68</item>
+        <item>69</item>
+        <item>70</item>
+        <item>71</item>
+        <item>72</item>
+        <item>73</item>
+        <item>74</item>
+        <item>75</item>
+        <item>76</item>
+        <item>77</item>
+        <item>78</item>
+        <item>79</item>
+        <item>80</item>
+        <item>81</item>
+        <item>82</item>
+        <item>83</item>
+        <item>84</item>
+        <item>85</item>
+        <item>86</item>
+        <item>87</item>
+        <item>88</item>
+        <item>89</item>
+        <item>90</item>
+        <item>91</item>
+        <item>92</item>
+        <item>93</item>
+        <item>94</item>
+        <item>95</item>
+        <item>96</item>
+        <item>97</item>
+        <item>98</item>
+        <item>99</item>
+    </string-array>
+
+    <!-- Custom Dialog Strings -->
+    <string name="string_dialog_profile">Profile</string>
+    <string name="string_dialog_test">Test</string>
+    <string name="string_dialog_cancel">Cancel</string>
+</resources>

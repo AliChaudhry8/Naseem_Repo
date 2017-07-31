@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <TextView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:textColor="@color/colorSecondaryText"
+        android:textStyle="bold"
+        android:padding="@dimen/signUp_spinner_item_padding"
+        android:layout_margin="@dimen/signUp_spinner_item_margin"
+        android:textSize="@dimen/signUp_spinner_item_test_size"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>

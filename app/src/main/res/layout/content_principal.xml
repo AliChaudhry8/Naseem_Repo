@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.plan9.naseemdev.naseem.Principal"
+    tools:showIn="@layout/app_bar_principal"
+    android:background="@drawable/b3">
+    <LinearLayout
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:id="@+id/buttonPanel"
+        android:layout_marginLeft="@dimen/user_content_main_button_panel_margin"
+        android:layout_marginRight="@dimen/user_content_main_button_panel_margin"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/student_content_button_layout_height"
+        android:weightSum="@integer/principal_content_main_button_panel_weight_sum">
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/students"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/string_principal_students"
+            android:textStyle="bold"
+            android:layout_margin="@dimen/user_content_main_button_panel_margin"
+            android:layout_weight="@integer/user_content_main_button_panel_weight"
+            android:background="@drawable/user_button_bg_2" />
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/teachers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/string_principal_teachers"
+            android:textStyle="bold"
+            android:layout_margin="@dimen/user_content_main_button_panel_margin"
+            android:layout_weight="@integer/user_content_main_button_panel_weight"
+            android:background="@drawable/user_button_bg_1" />
+    </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:layout_margin="@dimen/user_content_main_fragment_panel_margin"
+        android:layout_below="@id/buttonPanel"
+        android:id="@+id/principal_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+</RelativeLayout>

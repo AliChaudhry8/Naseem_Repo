@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_alignParentTop="true"
+            android:id="@+id/signInUsernameTL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/signIn_input_layout_margin"
+            android:layout_marginTop="@dimen/signIn_input_layout_margin"
+            android:layout_marginRight="@dimen/signIn_input_layout_margin">
+            <EditText
+                android:textColor="@color/colorText"
+                android:id="@+id/signInUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/string_username"
+                android:padding="@dimen/signIn_edit_text_padding"
+                android:background="@drawable/edit_text_bg"
+                android:inputType="textPersonName"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/signInPasswordTL"
+            android:layout_below="@id/signInUsernameTL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/signIn_input_layout_margin"
+            android:layout_marginTop="@dimen/signIn_input_layout_margin"
+            android:layout_marginRight="@dimen/signIn_input_layout_margin">
+            <EditText
+                android:textColor="@color/colorText"
+                android:id="@+id/signInPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/string_password"
+                android:padding="@dimen/signIn_edit_text_padding"
+                android:background="@drawable/edit_text_bg"
+                android:inputType="textPassword"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.v7.widget.AppCompatButton
+            android:layout_marginTop="@dimen/signIn_input_layout_margin"
+            android:id="@+id/signInButton"
+            android:layout_centerHorizontal="true"
+            android:paddingLeft="@dimen/signIn_button_padding"
+            android:paddingRight="@dimen/signIn_button_padding"
+            android:textStyle="bold"
+            android:layout_below="@id/signInPasswordTL"
+            android:background="@drawable/button_bg"
+            android:text="@string/string_signin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <android.support.v7.widget.AppCompatCheckBox
+            android:layout_marginTop="@dimen/signIn_remember_me_margin_top"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/signInButton"
+            android:id="@+id/signInRememberMe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="@dimen/signIn_remember_me_forgot_text_size"
+            android:padding="@dimen/signIn_remember_me_forgot_padding"
+            android:text="@string/string_remember_me"/>
+
+        <TextView
+            android:layout_marginTop="@dimen/signIn_forgot_password_margin_top"
+            android:layout_marginBottom="@dimen/signIn_forgot_password_margin_bottom"
+            android:id="@+id/signInForgotPassword"
+            android:layout_below="@id/signInRememberMe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="@dimen/signIn_remember_me_forgot_text_size"
+            android:padding="@dimen/signIn_remember_me_forgot_padding"
+            android:text="@string/string_forgot_password"/>
+    </RelativeLayout>
+</ScrollView>

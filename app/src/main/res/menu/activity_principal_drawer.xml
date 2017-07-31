@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/principal_test"
+        android:title="@string/string_principal_tests"
+        android:icon="@drawable/test" />
+
+    <item
+        android:id="@+id/principal_profile"
+        android:title="@string/string_student_profile"
+        android:icon="@drawable/profile_64"/>
+
+    <item
+        android:id="@+id/principal_logout"
+        android:title="@string/string_student_logout"
+        android:icon="@drawable/logout_64" />
+</menu>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/reload_Students_Layout"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/reload_test"
+            android:layout_margin="@dimen/reload_image_margin"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/reload_image_WH"
+            android:src="@drawable/reload"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/reload_image_margin"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textSize="@dimen/reload_text_size"
+            android:textColor="@color/colorText"
+            android:textStyle="bold"
+            android:text="@string/string_reload_students"/>
+    </LinearLayout>
+    <com.srx.widget.PullToLoadView
+        android:id="@+id/pull_to_load_students"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

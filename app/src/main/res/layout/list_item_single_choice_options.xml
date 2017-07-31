@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_test_list_view_item_inner_background_color">
+    <RadioButton
+        android:id="@+id/option"
+        android:textStyle="bold"
+        android:textSize="@dimen/show_test_activity_text_size"
+        android:layout_margin="@dimen/show_test_activity_marks_padding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorTextBlack"
+        android:textAlignment="gravity"
+        android:gravity="left"
+        android:buttonTint="@color/color_radio_tint"
+        android:paddingTop="5dp"/>
+</LinearLayout>
