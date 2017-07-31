@@ -184,6 +184,7 @@ public class Student_Teacher_Profile extends AppCompatActivity implements View.O
                     startActivityForResult(intent, CODE_CAMERA);
                 //}
                 break;
+
             }
             case R.id.st_gallery: {
                 Toast.makeText(getApplicationContext(), "GALLERY", Toast.LENGTH_LONG).show();
