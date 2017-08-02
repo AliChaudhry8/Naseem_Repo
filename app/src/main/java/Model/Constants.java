@@ -149,6 +149,10 @@ public class Constants {
     public static final String Principal_Key_Update_User_Avatar = "avatar";
 
 
+    // Amazon S3 Credentials
+    public static final String AWS_ACCESS_KEY = "AKIAIKAQNA5QCCNP6YQQ";
+    public static final String AWS_SECRET_KEY = "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";
+    public static final String AWS_BUCKET = "naseemedu";
 
 
     // Naseem Youtube API KEY
@@ -195,4 +199,6 @@ public class Constants {
     public static final String Pink_Panther_ID_2_Desc = "Three Aliens and a Footstool | The Pink Panther (1993)";
     public static final String Pink_Panther_ID_3 = "svlLdSBOz8w";
     public static final String Pink_Panther_ID_3_Desc = "The Pink Stuff | The Pink Panther (1993)";
+
+
 }

@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.plan9.naseemdev.naseem">
 
+    <service
+        android:name="com.amazonaws.mobileconnectors.s3.transferutility.TransferService"
+        android:enabled="true" />
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -59,10 +63,16 @@
             android:name=".Principal"
             android:label=""
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Principal_Test"
-            android:parentActivityName=".Principal"/>
-        <activity android:name=".Student_Teacher_Profile"
+        <activity
+            android:name=".Principal_Test"
+            android:parentActivityName=".Principal" />
+        <activity
+            android:name=".Student_Teacher_Profile"
             android:parentActivityName=".Principal"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Parent"
+            android:label="@string/title_activity_parent"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

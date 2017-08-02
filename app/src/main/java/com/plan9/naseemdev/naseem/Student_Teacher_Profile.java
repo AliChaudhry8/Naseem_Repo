@@ -7,10 +7,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Build;
+import android.os.Environment;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
@@ -30,6 +34,15 @@ import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.BasicAWSCredentials;
+import com.amazonaws.mobileconnectors.s3.transferutility.TransferListener;
+import com.amazonaws.mobileconnectors.s3.transferutility.TransferObserver;
+import com.amazonaws.mobileconnectors.s3.transferutility.TransferState;
+import com.amazonaws.mobileconnectors.s3.transferutility.TransferUtility;
+import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.AmazonS3Client;
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -42,12 +55,17 @@ import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
+
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.HashMap;
 import java.util.Map;
 import BussinessObjects.User_BO;
 import Model.Constants;
 import Model.JsonParsor;
 import Model.Session;
+
+import static android.view.View.GONE;
 
 public class Student_Teacher_Profile extends AppCompatActivity implements View.OnClickListener {
     private final static int CODE_CAMERA = 100;
@@ -165,7 +183,15 @@ public class Student_Teacher_Profile extends AppCompatActivity implements View.O
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.p_update: {
-                update_user();
+                if(!isConnected()){
+                    Toast toast = Toast.makeText(getApplicationContext(), Constants.Error_Internet, Toast.LENGTH_LONG);
+                    toast.setGravity(Gravity.CENTER, 0, 0);
+                    toast.show();
+                    return;
+                }
+                if(isValidate()){
+                    update_user();
+                }
                 break;
             }
             case R.id.reload_profile_layout: {
@@ -198,9 +224,28 @@ public class Student_Teacher_Profile extends AppCompatActivity implements View.O
         if (requestCode == CODE_CAMERA && resultCode == Activity.RESULT_OK) {
             Bitmap photo = (Bitmap) data.getExtras().get("data");
             profile_image.setImageBitmap(photo);
+            //save_image();
+            //new Upload_Image().execute();
         }
     }
 
+
+    public boolean isValidate(){
+        password.setError(null);
+        confirm_password.setError(null);
+        boolean flag = true;
+        if(password.getText().toString().equals("") && confirm_password.getText().toString().equals(""))
+            flag = true;
+        else if (password.getText().toString().equals(confirm_password.getText().toString())){
+            flag = true;
+        }
+        else{
+            flag = false;
+            password.setError(Constants.Error_Password_Match);
+            confirm_password.setError(Constants.Error_Password_Match);
+        }
+        return flag;
+    }
 
     public void load_user() {
         hide();
@@ -382,6 +427,14 @@ public class Student_Teacher_Profile extends AppCompatActivity implements View.O
         user.setTelephone(telephone.getText().toString());
         user.setAvatar(avatar);
 
+        if(password.getText().toString().equals("") || password.getText().toString().equals(null)) {
+            user.setPassword("");
+            user.setPassword_confirmation("");
+        }
+        else{
+            user.setPassword(password.getText().toString());
+            user.setPassword_confirmation(confirm_password.getText().toString());
+        }
 
 
         return i;
@@ -493,6 +546,109 @@ public class Student_Teacher_Profile extends AppCompatActivity implements View.O
                 startActivityForResult(intent, CODE_CAMERA);
                 break;
             }
+        }
+    }
+
+    public void save_image(){
+        BitmapDrawable drawable = (BitmapDrawable) profile_image.getDrawable();
+        Bitmap bitmap = drawable.getBitmap();
+        String folder_main = "Naseem";
+        File f = new File(Environment.getExternalStorageDirectory()+"/" + folder_main, "Pictures");
+        if (!f.exists()) {
+            f.mkdirs();
+        }
+        String profile_img = session.getUsername()+".jpg";
+        File file = new File(f, profile_img);
+        if(file.exists()){
+            file.delete();
+        }
+        try {
+            FileOutputStream out = new FileOutputStream(file);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 90, out);
+            out.flush();
+            out.close();
+        } catch (Exception e) {
+            Toast toast = Toast.makeText(getApplicationContext(), Constants.Error_Cannot_Load_Profile_Picture_1, Toast.LENGTH_LONG);
+            toast.setGravity(Gravity.CENTER, 0, 0);
+            toast.show();
+        }
+    }
+
+    private class Upload_Image extends AsyncTask<String, Void, String>{
+        private ProgressDialog pd;
+        private BitmapDrawable drawable;
+
+        public Upload_Image(){
+            pd = new ProgressDialog(Student_Teacher_Profile.this, R.style.AppTheme_Dark);
+            pd.setIndeterminate(true);
+            pd.setMessage("Uploading Image");
+            pd.setCancelable(false);
+        }
+
+        @Override
+        protected void onPreExecute() {
+            pd.show();
+            drawable = (BitmapDrawable) profile_image.getDrawable();
+        }
+
+        @Override
+        protected String doInBackground(String... strings) {
+            //save_image();
+            Bitmap bitmap = drawable.getBitmap();
+            String folder_main = "Naseem";
+            File f = new File(Environment.getExternalStorageDirectory()+"/" + folder_main, "Pictures");
+            if (!f.exists()) {
+                f.mkdirs();
+            }
+            String profile_img = user.getUsername()+".jpg";
+            File file = new File(f, profile_img);
+            if(file.exists()){
+                file.delete();
+            }
+            String result = "";
+            try {
+                FileOutputStream out = new FileOutputStream(file);
+                bitmap.compress(Bitmap.CompressFormat.JPEG, 90, out);
+                out.flush();
+                out.close();
+                result = "1";
+
+                if(result.equals("1")){
+                    AWSCredentials credentials = new BasicAWSCredentials(Constants.AWS_ACCESS_KEY, Constants.AWS_SECRET_KEY);
+                    AmazonS3 s3 = new AmazonS3Client(credentials);
+                    TransferUtility transferUtility = new TransferUtility(s3, getApplicationContext());
+                    //File img = new File(Environment.getExternalStorageDirectory()+"/" + folder_main + "Pictures" +);
+                    //File f = new File(Environment.getExternalStorageDirectory()+"/" + folder_main, "Pictures");
+                    //Uri uri = Uri.fromFile(new File(f, profile_img));
+                    File img = new File(f, profile_img);
+                    TransferObserver observer = transferUtility.upload(Constants.AWS_BUCKET,"1123"+user.getUsername()+"12", img);
+                    observer.setTransferListener(new TransferListener() {
+                        @Override
+                        public void onStateChanged(int id, TransferState state) {
+                            //result = result + id + " ";
+                        }
+
+                        @Override
+                        public void onProgressChanged(int id, long bytesCurrent, long bytesTotal) {
+
+                        }
+
+                        @Override
+                        public void onError(int id, Exception ex) {
+
+                        }
+                    });
+                }
+            } catch (Exception e) {
+                result = e.getMessage();
+            }
+            return result;
+        }
+
+        @Override
+        protected void onPostExecute(String str) {
+            pd.dismiss();
+            Toast.makeText(getApplicationContext(), "Message: " + str, Toast.LENGTH_LONG).show();
         }
     }
 }
