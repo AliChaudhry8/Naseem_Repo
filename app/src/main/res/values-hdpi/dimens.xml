@@ -116,4 +116,12 @@
     <dimen name="dialog_text_size">16dp</dimen>
     <dimen name="dialog_margin">4dp</dimen>
     <dimen name="dialog_margin_extra">8dp</dimen>
+
+
+    <!-- ************************************* -->
+    <!-- ********** Parent Activity ********** -->
+    <!-- ************************************* -->
+    <dimen name="parent_error_text_size">18dp</dimen>
+    <dimen name="parent_test_text_size">15dp</dimen>
+    <dimen name="parent_test_margin_padding">3dp</dimen>
 </resources>

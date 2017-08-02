@@ -56,6 +56,11 @@ public class MainActivity extends Activity {
                         finish();
                         startActivity(it);
                     }
+                    else if(session.getRole().equals("Parent")){
+                        Intent it = new Intent(getApplicationContext(), Parent.class);
+                        finish();
+                        startActivity(it);
+                    }
                     else {
                             Toast toast = Toast.makeText(getApplicationContext(), "No Activity for Other Roles\nJust Student and Principal is Allowed Yet", Toast.LENGTH_LONG);
                             toast.setGravity(Gravity.CENTER, 0, 0);

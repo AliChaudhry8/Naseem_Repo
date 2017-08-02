@@ -6,6 +6,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+import BussinessObjects.Parent_Test_BO;
 import BussinessObjects.Show_Test_BO.BooleanQuestions;
 import BussinessObjects.Show_Test_BO.Complete_Test_BO;
 import BussinessObjects.SchoolSection;
@@ -477,6 +478,30 @@ public class JsonParsor {
             return errors;
         }catch (Exception e){
             return errors;
+        }
+    }
+
+
+    public ArrayList<Parent_Test_BO> parse_Parent_Test(String s){
+        ArrayList<Parent_Test_BO> test = new ArrayList<Parent_Test_BO>();
+        try{
+            JSONObject object = new JSONObject(s);
+            JSONArray js = object.getJSONArray(Constants.Key_Test_Schedule);
+            for(int i=0; i<js.length(); i++){
+                JSONObject jsonObject = js.getJSONObject(i);
+                Parent_Test_BO p = new Parent_Test_BO();
+                p.setId(jsonObject.getInt(Constants.Key_Test_Id));
+                String str = jsonObject.getString(Constants.Key_Test_Name);
+                String[] str_array = str.split(":");
+                p.setName(str_array[0]);
+                p.setTaken(Integer.parseInt(str_array[1]));
+                test.add(p);
+            }
+            return test;
+        }
+        catch (Exception e){
+            test = null;
+            return test;
         }
     }
 }

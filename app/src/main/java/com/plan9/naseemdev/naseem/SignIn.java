@@ -148,6 +148,11 @@ public class SignIn extends Fragment implements View.OnClickListener{
                                 getActivity().finish();
                                 startActivity(it);
                             }
+                            else if(u.getRole().equals("Parent")){
+                                Intent it = new Intent(getActivity(), Parent.class);
+                                getActivity().finish();
+                                startActivity(it);
+                            }
                             else {
                                 Toast toast = Toast.makeText(getActivity().getApplicationContext(), "No Activity for Other Roles\nJust Student and Principal is Allowed Yet", Toast.LENGTH_LONG);
                                 toast.setGravity(Gravity.CENTER, 0, 0);

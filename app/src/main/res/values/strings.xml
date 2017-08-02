@@ -199,4 +199,9 @@
     <string name="string_dialog_test">Test</string>
     <string name="string_dialog_cancel">Cancel</string>
     <string name="title_activity_parent">Parent</string>
+
+
+
+    <!-- Parent Activity Strings -->
+    <string name="string_parent_not_authorized">Your account has not yet been authorized by the student you have chosen.\nTo authorize this account, access the Parents tab from the student\'s account.</string>
 </resources>

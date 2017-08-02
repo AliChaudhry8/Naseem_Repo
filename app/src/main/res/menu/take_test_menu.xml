@@ -5,5 +5,5 @@
         android:id="@+id/attempt_time"
         android:actionViewClass="android.widget.TextView"
         app:showAsAction="always"
-        android:title="abcdefg"/>
+        android:title=""/>
 </menu>

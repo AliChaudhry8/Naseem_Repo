@@ -23,6 +23,9 @@ public class Constants {
     public static final String Error_Cannot_Load_Profile_Picture_1 = "Failed to Load Profile Picture";
     public static final String Error_GET_WRITE_PERMISSION = "Need Permission for You Storage.\nKindly Grant it";
     public static final String Error_Following = "Following Errors prohibited the update operation:\n";
+    public static final String Error_Cannot_Load_Students = "No Internet Connection Found.\nCan't load Students";
+    public static final String Error_Cannot_Load_Teachers = "No Internet Connection Found.\nCan't load Teachers";
+    public static final String Error_Cannot_Load_Tests = "No Internet Connection Found.\nCan't load Tests";
 
     // URL's Strings
     public static final String URL_Base = "http://www.naseem.education/";

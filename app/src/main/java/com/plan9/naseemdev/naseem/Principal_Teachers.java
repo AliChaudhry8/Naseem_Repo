@@ -54,7 +54,7 @@ public class Principal_Teachers extends Fragment {
         paginater = new Principal_Teacher_Paginater(getActivity().getApplicationContext(), pullToLoadTeachers, Principal_Teachers.this, connected);
         if(!connected) {
             hide();
-            Toast toast = Toast.makeText(getActivity().getApplicationContext(), Constants.Error_Cannot_Load_Profile_Picture, Toast.LENGTH_LONG);
+            Toast toast = Toast.makeText(getActivity().getApplicationContext(), Constants.Error_Cannot_Load_Teachers, Toast.LENGTH_LONG);
             toast.setGravity(Gravity.CENTER, 0, 0);
             toast.show();
         }
