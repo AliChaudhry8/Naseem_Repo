@@ -62,10 +62,13 @@
         <activity
             android:name=".Principal"
             android:label=""
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:launchMode="singleInstance"/>
         <activity
+            android:label=""
             android:name=".Principal_Test"
-            android:parentActivityName=".Principal" />
+            android:parentActivityName=".Principal"
+            android:launchMode="singleInstance"/>
         <activity
             android:name=".Student_Teacher_Profile"
             android:parentActivityName=".Principal"

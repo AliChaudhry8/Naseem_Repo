@@ -90,7 +90,9 @@
     <string name="string_teacher">Teacher</string>
     <string name="string_principal">Principal</string>
     <string name="string_parent">Parent</string>
-
+    <string name="string_taken">Taken</string>
+    <string name="string_schedule">Schedule</string>
+    <string name="string_attempts">Attempts</string>
     <string-array name="array_age">
         <item>Select Age</item>
         <item>1</item>

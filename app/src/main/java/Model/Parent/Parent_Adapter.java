@@ -3,7 +3,6 @@ package Model.Parent;
 import android.app.Activity;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,7 +44,7 @@ public class Parent_Adapter extends  RecyclerView.Adapter<Parent_Adapter.MyViewH
             public void onClick(View view) {
                 int position = recyclerView.getChildAdapterPosition(view);
                 Parent_Test_BO test_bo = test.get(position);
-                Toast.makeText(context, "Test Name: " + test_bo.getName(), Toast.LENGTH_LONG).show();
+                Toast.makeText(context, "Test Name: " + test_bo.getName() + " Taken: " + test_bo.getTaken(), Toast.LENGTH_LONG).show();
             }
         });
         return holder;

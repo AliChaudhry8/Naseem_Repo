@@ -207,6 +207,7 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
         switch (id){
             case R.id.principal_test_1:{
                 Intent it = new Intent(this, Principal_Test.class);
+                it.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 startActivity(it);
                 break;
             }
@@ -244,6 +245,7 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
             }
             case R.id.principal_test:{
                 Intent it = new Intent(this, Principal_Test.class);
+                it.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 startActivity(it);
                 break;
             }

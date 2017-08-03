@@ -52,9 +52,12 @@ public class MainActivity extends Activity {
                         startActivity(it);
                     }
                     else if(session.getRole().equals("Principal")){
-                        Intent it = new Intent(getApplicationContext(), Principal.class);
+                        //Intent it = new Intent(getApplicationContext(), Principal.class);
                         finish();
+                        Intent it = new Intent(getApplicationContext(), Principal.class);
+                        it.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                         startActivity(it);
+                        //startActivity(it);
                     }
                     else if(session.getRole().equals("Parent")){
                         Intent it = new Intent(getApplicationContext(), Parent.class);
