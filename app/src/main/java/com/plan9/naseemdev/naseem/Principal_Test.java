@@ -63,7 +63,6 @@ public class Principal_Test extends AppCompatActivity implements View.OnClickLis
             @Override
             public void onPageScrollStateChanged(int state) {}
         });
-        Toast.makeText(getApplicationContext(), "OnCreate View Called", Toast.LENGTH_LONG).show();
     }
 
     @Override

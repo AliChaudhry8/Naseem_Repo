@@ -63,12 +63,11 @@
             android:name=".Principal"
             android:label=""
             android:theme="@style/AppTheme.NoActionBar"
-            android:launchMode="singleInstance"/>
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden"/>
         <activity
-            android:label=""
+            android:label="@string/string_test"
             android:name=".Principal_Test"
-            android:parentActivityName=".Principal"
-            android:launchMode="singleInstance"/>
+            android:parentActivityName=".Principal" />
         <activity
             android:name=".Student_Teacher_Profile"
             android:parentActivityName=".Principal"

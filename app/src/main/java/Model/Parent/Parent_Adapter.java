@@ -53,7 +53,11 @@ public class Parent_Adapter extends  RecyclerView.Adapter<Parent_Adapter.MyViewH
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         Parent_Test_BO test_bo = test.get(position);
-        holder.test_name.setText("" + test_bo.getName());
+        holder.test_name.setText("Test Name: " + test_bo.getName());
+        if(test_bo.getStart_time().equals("") || test_bo.getStart_time().equals(null) || test_bo.getStart_time().equals("null"))
+            holder.start_time.setText("Test Date: ");
+        else
+            holder.start_time.setText("Test Date: " + test_bo.getStart_time());
     }
 
     @Override
@@ -76,9 +80,11 @@ public class Parent_Adapter extends  RecyclerView.Adapter<Parent_Adapter.MyViewH
 
     class MyViewHolder extends RecyclerView.ViewHolder{
         private TextView test_name;
+        private TextView start_time;
         public MyViewHolder(View item){
             super(item);
             test_name = (TextView)item.findViewById(R.id.test_name);
+            start_time = (TextView) item.findViewById(R.id.start_time);
         }
     }
 }

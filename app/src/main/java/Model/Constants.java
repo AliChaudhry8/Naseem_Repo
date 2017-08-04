@@ -37,10 +37,12 @@ public class Constants {
     public static final String URL_Logout = URL_Base_1 + "api/v1/sessions/";
     public static final String URL_ShowTest = URL_Base_1 + "api/v1/tests/getTakenTest?auth=";
     public static final String URL_Start_Test = URL_Base_1 + "api/v1/tests/startTest?auth=";
-    public static final String URL_Principal_Students = URL_Base_1 + "api/v1/tests/getStudents?auth=";
-    public static final String URL_Principal_Teachers = URL_Base_1 + "api/v1/tests/getTeachers?auth=";
+    public static final String URL_Principal_Students = URL_Base_1 + "api/v1/users/getStudents?auth=";
+    public static final String URL_Principal_Teachers = URL_Base_1 + "api/v1/users/getTeachers?auth=";
     public static final String URL_Principal_User = URL_Base_1 + "api/v1/users/getUser?auth=";
     public static final String URL_Principal_Update_User = URL_Base_1 + "api/v1/users/update_user?auth=";
+    public static final String URL_Principal_Get_Test_Schedule = URL_Base_1 + "api/v1/tests/getPrincipalTestSchedule?auth=";
+    public static final String URL_Principal_Get_Test_Taken = URL_Base_1 + "api/v1/tests/getPrincipalTestTaken?auth=";
 
     // Keys for USER JSON Object
     public static final String User_Authenticating = "Authenticating . . .";

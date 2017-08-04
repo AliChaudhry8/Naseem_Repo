@@ -93,6 +93,12 @@
     <string name="string_taken">Taken</string>
     <string name="string_schedule">Schedule</string>
     <string name="string_attempts">Attempts</string>
+    <string name="string_reload_principal_test_taken">Failed to load Test Taken.\nTry Again</string>
+    <string name="string_reload_principal_test_schedule">Failed to load Test Schedule.\nTry Again</string>
+    <string name="string_reload_principal_test_attempts">Failed to load Students Attempts.\nTry Again</string>
+    <string name="string_principal_teacher_name">Teacher Name</string>
+    <string name="string_principal_test_name">Test Name</string>
+    <string name="string_principal_test_date">Test Date</string>
     <string-array name="array_age">
         <item>Select Age</item>
         <item>1</item>

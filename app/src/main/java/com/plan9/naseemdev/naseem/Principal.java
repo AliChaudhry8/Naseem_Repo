@@ -72,6 +72,18 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        /*int fi = getIntent().getExtras().getInt("finish");
+        if (fi == 1){
+            finish();
+        }
+        Intent it = getIntent();
+        if(it != null){
+            Toast.makeText(getApplicationContext(), "Intent is Not Null", Toast.LENGTH_LONG).show();
+            int fin = it.getIntExtra("finish", -1);
+            if (fin == 1){
+                finish();
+            }
+        }*/
         setContentView(R.layout.activity_principal);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -181,9 +193,14 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
                     {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
+                            //Intent it = new Intent(getApplicationContext(), Principal.class);
+                            //it.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+                            //it.putExtra("finish" , 1);
+                            //finishAffinity();
+                            ActivityCompat.finishAffinity(Principal.this);
                             finish();
+                            //startActivity(it);
                         }
-
                     })
                     .setNegativeButton("No", null)
                     .show();
@@ -497,6 +514,7 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError volleyError) {
+                logout_dialog.dismiss();
                 Toast toast = Toast.makeText(getApplicationContext(), Constants.Error_Unrecognized_Error, Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.CENTER, 0, 0);
                 toast.show();

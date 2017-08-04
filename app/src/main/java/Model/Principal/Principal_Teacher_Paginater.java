@@ -65,9 +65,7 @@ public class Principal_Teacher_Paginater {
         pullToLoadView.isLoadMoreEnabled(true);
         pullToLoadView.setPullCallback(new PullCallback() {
             @Override
-            public void onLoadMore() {
-                load_data(page_number);
-            }
+            public void onLoadMore() {load_data(page_number);}
             @Override
             public void onRefresh() {
                 adapter.clear();
@@ -76,13 +74,9 @@ public class Principal_Teacher_Paginater {
                 load_data(page_number);
             }
             @Override
-            public boolean isLoading() {
-                return isLoading;
-            }
+            public boolean isLoading() {return isLoading;}
             @Override
-            public boolean hasLoadedAllItems() {
-                return hasLoadedAll;
-            }
+            public boolean hasLoadedAllItems() {return hasLoadedAll;}
         });
         pullToLoadView.initLoad();
     }

@@ -100,7 +100,6 @@ public class Principal_Student_Teacher_Adapter extends RecyclerView.Adapter<Prin
         holder.username.setText("Username: " + u.getUsername());
         holder.school_name.setText("School: " + u.getSchool_name());
         holder.section_name.setText("Section: " + u.getSection_name());
-
     }
 
     @Override

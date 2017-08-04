@@ -443,6 +443,7 @@ public class Parent extends AppCompatActivity implements NavigationView.OnNaviga
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError volleyError) {
+                logout_dialog.dismiss();
                 Toast toast = Toast.makeText(getApplicationContext(), Constants.Error_Unrecognized_Error, Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.CENTER, 0, 0);
                 toast.show();
