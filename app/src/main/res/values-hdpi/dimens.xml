@@ -110,7 +110,6 @@
     <dimen name="principal_student_teacher_card_view_corner">7dp</dimen>
     <integer name="principal_content_main_button_panel_weight_sum">2</integer>
     <dimen name="profile_gender_margin">5dp</dimen>
-    <dimen name="principal_test_text_size">16dp</dimen>
 
     <!-- Custom Dialog Dimensions -->
     <dimen name="dialog_text_size">16dp</dimen>

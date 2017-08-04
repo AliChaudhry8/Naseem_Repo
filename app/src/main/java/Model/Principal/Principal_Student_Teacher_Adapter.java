@@ -97,9 +97,9 @@ public class Principal_Student_Teacher_Adapter extends RecyclerView.Adapter<Prin
                 }
             });
         }
-        holder.username.setText("Username: " + u.getUsername());
-        holder.school_name.setText("School: " + u.getSchool_name());
-        holder.section_name.setText("Section: " + u.getSection_name());
+        holder.username.setText(u.getUsername());
+        holder.school_name.setText(u.getSchool_name());
+        holder.section_name.setText(u.getSection_name());
     }
 
     @Override

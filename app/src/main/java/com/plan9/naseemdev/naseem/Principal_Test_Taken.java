@@ -45,7 +45,7 @@ public class Principal_Test_Taken extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_principal_test_taken, container, false);
         session = new Session(getActivity().getApplicationContext());
-        reload = (LinearLayout)rootView.findViewById(R.id.reload_Test_Taken_Layout);
+        reload = (LinearLayout)rootView.findViewById(R.id.reload_p_Test_Taken_Layout);
         reload.setVisibility(View.GONE);
         reload.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,7 +62,7 @@ public class Principal_Test_Taken extends Fragment {
                 }
             }
         });
-        pullToLoadTest = (PullToLoadView)rootView.findViewById(R.id.pull_to_load_test_taken);
+        pullToLoadTest = (PullToLoadView)rootView.findViewById(R.id.pull_to_load_test_p_taken);
         boolean connected = isConnected();
         paginater = new Principal_Test_Taken_Paginater(getActivity().getApplicationContext(), pullToLoadTest, Principal_Test_Taken.this, connected);
         if(!connected) {

@@ -3,7 +3,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
     <LinearLayout
-        android:id="@+id/reload_Test_Attempts_Layout"
+        android:id="@+id/reload_p_Test_Attempts_Layout"
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -25,7 +25,7 @@
             android:text="@string/string_reload_principal_test_attempts"/>
     </LinearLayout>
     <com.srx.widget.PullToLoadView
-        android:id="@+id/pull_to_load_test_attempts"
+        android:id="@+id/pull_to_load_test_p_attempts"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 </LinearLayout>
