@@ -519,6 +519,7 @@ public class JsonParsor {
                 p.setId(jsonObject.getInt(Constants.Key_Test_Id));
                 p.setName(jsonObject.getString(Constants.Key_Test_Name));
                 p.setStart_time(jsonObject.getString(Constants.Key_Test_Start_Time));
+                p.setTeacher_name(jsonObject.getString(Constants.Key_Test_Teacher_Name));
                 test.add(p);
             }
             return test;

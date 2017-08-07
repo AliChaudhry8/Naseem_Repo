@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 public class Principal_Test extends AppCompatActivity implements View.OnClickListener{
 
-    private Button taken, schedule, attempts;
+    private Button schedule, attempts;
     private ViewPager viewPager;
     private Test_Pager_Adapter adapter;
 
@@ -24,16 +24,14 @@ public class Principal_Test extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal__test);
 
-        taken = (Button)findViewById(R.id.taken);
         schedule  = (Button)findViewById(R.id.schedule);
         attempts = (Button)findViewById(R.id.attempts);
-        taken.setOnClickListener(this);
         schedule.setOnClickListener(this);
         attempts.setOnClickListener(this);
         viewPager = (ViewPager)findViewById(R.id.test_container);
         adapter  = new Test_Pager_Adapter(getSupportFragmentManager());
         viewPager.setAdapter(adapter);
-        viewPager.setOffscreenPageLimit(3);
+        viewPager.setOffscreenPageLimit(2);
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
@@ -41,19 +39,11 @@ public class Principal_Test extends AppCompatActivity implements View.OnClickLis
             public void onPageSelected(int position) {
                 switch (position){
                     case 0:{
-                        taken.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.user_button_bg_2));
-                        schedule.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.user_button_bg_1));
-                        attempts.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.user_button_bg_1));
-                        break;
-                    }
-                    case 1:{
-                        taken.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.user_button_bg_1));
                         schedule.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.user_button_bg_2));
                         attempts.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.user_button_bg_1));
                         break;
                     }
-                    case 2:{
-                        taken.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.user_button_bg_1));
+                    case 1:{
                         schedule.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.user_button_bg_1));
                         attempts.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.user_button_bg_2));
                         break;
@@ -68,25 +58,16 @@ public class Principal_Test extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.taken:{
-                taken.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.user_button_bg_2));
-                schedule.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.user_button_bg_1));
+            case R.id.schedule:{
+                schedule.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.user_button_bg_2));
                 attempts.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.user_button_bg_1));
                 viewPager.setCurrentItem(0);
                 break;
             }
-            case R.id.schedule:{
-                taken.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.user_button_bg_1));
-                schedule.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.user_button_bg_2));
-                attempts.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.user_button_bg_1));
-                viewPager.setCurrentItem(1);
-                break;
-            }
             case R.id.attempts:{
-                taken.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.user_button_bg_1));
                 schedule.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.user_button_bg_1));
                 attempts.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.user_button_bg_2));
-                viewPager.setCurrentItem(2);
+                viewPager.setCurrentItem(1);
                 break;
             }
         }
@@ -119,14 +100,11 @@ public class Principal_Test extends AppCompatActivity implements View.OnClickLis
         public Test_Pager_Adapter(FragmentManager fm){super(fm);}
         @Override
         public Fragment getItem(int position) {
-            if(position == 0){
-                Principal_Test_Taken taken = new Principal_Test_Taken();
-                return taken;
-            }else if (position == 1) {
+            if (position == 0) {
                 Principal_Test_Schedule schedule = new Principal_Test_Schedule();
                 return schedule;
             }
-            else if (position == 2){
+            else if (position == 1){
                 Principal_Test_Attempts attempts = new Principal_Test_Attempts();
                 return attempts;
             }
@@ -134,7 +112,7 @@ public class Principal_Test extends AppCompatActivity implements View.OnClickLis
         }
         @Override
         public int getCount() {
-            return 3;
+            return 2;
         }
     }
 }

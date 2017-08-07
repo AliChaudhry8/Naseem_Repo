@@ -1,12 +1,17 @@
 package Model.Principal;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.plan9.naseemdev.naseem.PrincipalShowScheduleTest;
+import com.plan9.naseemdev.naseem.PrincipalShowTestAttempts;
 import com.plan9.naseemdev.naseem.R;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -36,7 +41,22 @@ public class Principal_Test_Adapter extends RecyclerView.Adapter<Principal_Test_
             public void onClick(View view) {
                 int position = recyclerView.getChildAdapterPosition(view);
                 Principal_Test_BO test = tests.get(position);
-                Toast.makeText(context, "Position: " + position + " Test Name: " + test.getName(), Toast.LENGTH_LONG).show();
+                if(test.getStatus() == 2) {
+                    Intent it = new Intent(context, PrincipalShowTestAttempts.class);
+                    it.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    Bundle b = new Bundle();
+                    b.putSerializable("test", test);
+                    it.putExtras(b);
+                    context.startActivity(it);
+                }
+                else if (test.getStatus() == 1) {
+                    Intent it = new Intent(context, PrincipalShowScheduleTest.class);
+                    it.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    Bundle b = new Bundle();
+                    b.putSerializable("test", test);
+                    it.putExtras(b);
+                    context.startActivity(it);
+                }
             }
         });
         return holder;
@@ -55,7 +75,10 @@ public class Principal_Test_Adapter extends RecyclerView.Adapter<Principal_Test_
             int testhour = Integer.parseInt(testTime[0]);
             int testminute = Integer.parseInt(testTime[1]);
             //holder.start_time.setText(test.getStart_time());
-            holder.start_time.setText(startDateTime[0] + " " + testhour + ":"+  testminute +"");
+            String str = startDateTime[0].substring(0, 4);
+            //holder.start_time.setText(startDateTime[0] + " " + testhour + ":"+  testminute +"");
+            holder.start_time.setText(str);
+            holder.teacher_name.setText(test.getTeacher_name());
         }
     }
 

@@ -63,10 +63,10 @@
             android:name=".Principal"
             android:label=""
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustResize|stateAlwaysHidden"/>
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden" />
         <activity
-            android:label="@string/string_test"
             android:name=".Principal_Test"
+            android:label="@string/string_test"
             android:parentActivityName=".Principal" />
         <activity
             android:name=".Student_Teacher_Profile"
@@ -75,7 +75,13 @@
         <activity
             android:name=".Parent"
             android:label=""
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".PrincipalShowScheduleTest"
+            android:label=""
+            android:parentActivityName=".Principal_Test" />
+        <activity android:name=".PrincipalShowTestAttempts"
+            android:parentActivityName=".Principal_Test"></activity>
     </application>
 
 </manifest>

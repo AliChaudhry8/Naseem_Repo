@@ -17,11 +17,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_margin="@dimen/parent_test_margin_padding">
+            android:layout_margin="@dimen/principal_test_layout_margin">
             <TextView
                 android:id="@+id/label_teacher_name"
-                android:layout_margin="@dimen/parent_test_margin_padding"
-                android:padding="@dimen/parent_test_margin_padding"
+                android:layout_margin="@dimen/principal_test_layout_margin"
+                android:padding="@dimen/principal_test_layout_margin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
@@ -32,8 +32,8 @@
                 android:textColor="@color/color_transparent_40_p"/>
             <TextView
                 android:id="@+id/label_test_name"
-                android:layout_margin="@dimen/parent_test_margin_padding"
-                android:padding="@dimen/parent_test_margin_padding"
+                android:layout_margin="@dimen/principal_test_layout_margin"
+                android:padding="@dimen/principal_test_layout_margin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
@@ -44,8 +44,8 @@
                 android:textColor="@color/color_transparent_40_p"/>
             <TextView
                 android:id="@+id/label_start_time"
-                android:layout_margin="@dimen/parent_test_margin_padding"
-                android:padding="@dimen/parent_test_margin_padding"
+                android:layout_margin="@dimen/principal_test_layout_margin"
+                android:padding="@dimen/principal_test_layout_margin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
@@ -59,11 +59,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_margin="@dimen/parent_test_margin_padding">
+            android:layout_margin="@dimen/principal_test_layout_margin">
             <TextView
+                android:maxLines="1"
+                android:ellipsize="end"
                 android:id="@+id/p_teacher_name"
-                android:layout_margin="@dimen/parent_test_margin_padding"
-                android:padding="@dimen/parent_test_margin_padding"
+                android:layout_margin="@dimen/principal_test_layout_margin"
+                android:padding="@dimen/principal_test_layout_margin"
                 android:layout_width="match_parent"
                 android:textStyle="bold"
                 android:layout_height="wrap_content"
@@ -72,9 +74,11 @@
                 android:textSize="@dimen/parent_test_text_size"
                 android:textColor="@color/colorText"/>
             <TextView
+                android:maxLines="1"
+                android:ellipsize="end"
                 android:id="@+id/p_test_name"
-                android:layout_margin="@dimen/parent_test_margin_padding"
-                android:padding="@dimen/parent_test_margin_padding"
+                android:layout_margin="@dimen/principal_test_layout_margin"
+                android:padding="@dimen/principal_test_layout_margin"
                 android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -83,9 +87,11 @@
                 android:textSize="@dimen/parent_test_text_size"
                 android:textColor="@color/colorText"/>
             <TextView
+                android:maxLines="1"
+                android:ellipsize="end"
                 android:id="@+id/p_start_time"
-                android:layout_margin="@dimen/parent_test_margin_padding"
-                android:padding="@dimen/parent_test_margin_padding"
+                android:layout_margin="@dimen/principal_test_layout_margin"
+                android:padding="@dimen/principal_test_layout_margin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="gravity"

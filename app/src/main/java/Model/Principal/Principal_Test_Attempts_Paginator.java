@@ -80,7 +80,7 @@ public class Principal_Test_Attempts_Paginator {
     public void load_data(final int page){
         isLoading = true;
         test_attempts.show();
-        String URL = Constants.URL_Principal_Get_Test_Taken + session.getAuthenticationToken();
+        String URL = Constants.URL_Principal_Get_Test_Attempts + session.getAuthenticationToken();
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL,
                 new Response.Listener<String>() {
                     @Override
@@ -102,6 +102,7 @@ public class Principal_Test_Attempts_Paginator {
                             ArrayList<Principal_Test_BO> tests = jsonParsor.parse_Principal_Test(s);
                             if(tests != null){
                                 for (int i=0; i<tests.size(); i++){
+                                    tests.get(i).setStatus(2);
                                     adapter.addTest(tests.get(i));
                                 }
                                 pullToLoadView.setComplete();

@@ -42,7 +42,7 @@ public class Constants {
     public static final String URL_Principal_User = URL_Base_1 + "api/v1/users/getUser?auth=";
     public static final String URL_Principal_Update_User = URL_Base_1 + "api/v1/users/update_user?auth=";
     public static final String URL_Principal_Get_Test_Schedule = URL_Base_1 + "api/v1/tests/getPrincipalTestSchedule?auth=";
-    public static final String URL_Principal_Get_Test_Taken = URL_Base_1 + "api/v1/tests/getPrincipalTestTaken?auth=";
+    public static final String URL_Principal_Get_Test_Attempts = URL_Base_1 + "api/v1/tests/getPrincipalTestAttempts?auth=";
 
     // Keys for USER JSON Object
     public static final String User_Authenticating = "Authenticating . . .";
@@ -99,6 +99,7 @@ public class Constants {
     public static final String Key_Test_Start_Time = "start_time";
     public static final String Key_Test_Attempt_Time = "attempt_time";
     public static final String Key_Test_Teacher_Id = "teacher_id";
+    public static final String Key_Test_Teacher_Name = "t_name";
 
     // Keys for get Show Test
     public static final String User_Key_Test_Id = "testid";

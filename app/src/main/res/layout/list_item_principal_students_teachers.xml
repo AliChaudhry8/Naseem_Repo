@@ -39,7 +39,7 @@
             <TextView
                 android:textStyle="bold"
                 android:textSize="@dimen/show_test_activity_text_size"
-                android:layout_margin="@dimen/show_test_activity_marks_padding"
+                android:layout_margin="@dimen/principal_test_layout_margin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/color_transparent_40_p"
@@ -49,7 +49,7 @@
             <TextView
                 android:textStyle="bold"
                 android:textSize="@dimen/show_test_activity_text_size"
-                android:layout_margin="@dimen/show_test_activity_marks_padding"
+                android:layout_margin="@dimen/principal_test_layout_margin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/color_transparent_40_p"
@@ -59,7 +59,7 @@
             <TextView
                 android:textStyle="bold"
                 android:textSize="@dimen/show_test_activity_text_size"
-                android:layout_margin="@dimen/show_test_activity_marks_padding"
+                android:layout_margin="@dimen/principal_test_layout_margin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/color_transparent_40_p"
@@ -76,7 +76,9 @@
             <TextView
                 android:textStyle="bold"
                 android:textSize="@dimen/show_test_activity_text_size"
-                android:layout_margin="@dimen/show_test_activity_marks_padding"
+                android:layout_margin="@dimen/principal_test_layout_margin"
+                android:maxLines="1"
+                android:ellipsize="end"
                 android:id="@+id/principal_student_teacher_username"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -86,7 +88,9 @@
             <TextView
                 android:textStyle="bold"
                 android:textSize="@dimen/show_test_activity_text_size"
-                android:layout_margin="@dimen/show_test_activity_marks_padding"
+                android:layout_margin="@dimen/principal_test_layout_margin"
+                android:maxLines="1"
+                android:ellipsize="end"
                 android:id="@+id/principal_student_teacher_school_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -96,7 +100,9 @@
             <TextView
                 android:textStyle="bold"
                 android:textSize="@dimen/show_test_activity_text_size"
-                android:layout_margin="@dimen/show_test_activity_marks_padding"
+                android:layout_margin="@dimen/principal_test_layout_margin"
+                android:maxLines="1"
+                android:ellipsize="end"
                 android:id="@+id/principal_student_teacher_section_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

@@ -102,6 +102,7 @@ public class Principal_Test_Schedule_Paginator {
                             ArrayList<Principal_Test_BO> tests = jsonParsor.parse_Principal_Test(s);
                             if(tests != null){
                                 for (int i=0; i<tests.size(); i++){
+                                    tests.get(i).setStatus(1);
                                     adapter.addTest(tests.get(i));
                                 }
                                 pullToLoadView.setComplete();
