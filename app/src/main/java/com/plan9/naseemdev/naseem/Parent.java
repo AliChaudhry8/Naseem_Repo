@@ -429,9 +429,15 @@ public class Parent extends AppCompatActivity implements NavigationView.OnNaviga
                     @Override
                     public void onResponse(String s) {
                         try{
-                            if(s.equals("1") || s.equals("-1") || s.equals("-2")){
+                            if(s.equals("1")){
                                 logout_dialog.dismiss();
                                 logout_successful();
+                            }
+                            else {
+                                logout_dialog.dismiss();
+                                Toast toast = Toast.makeText(getApplicationContext(), Constants.Error_Unrecognized_Error, Toast.LENGTH_LONG);
+                                toast.setGravity(Gravity.CENTER, 0, 0);
+                                toast.show();
                             }
                         }catch (Exception e) {
                             logout_dialog.dismiss();

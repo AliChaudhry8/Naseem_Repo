@@ -46,7 +46,7 @@ public class Principal_Test_Schedule extends Fragment{
                 }
                 else{
                     hide();
-                    Toast toast = Toast.makeText(getActivity().getApplicationContext(), Constants.Error_Cannot_Load_Profile_Picture, Toast.LENGTH_LONG);
+                    Toast toast = Toast.makeText(getActivity().getApplicationContext(), Constants.Error_Cannot_Load_Tests, Toast.LENGTH_LONG);
                     toast.setGravity(Gravity.CENTER, 0, 0);
                     toast.show();
                 }
@@ -57,7 +57,7 @@ public class Principal_Test_Schedule extends Fragment{
         paginator = new Principal_Test_Schedule_Paginator(getActivity().getApplicationContext(), pullToLoadTest, Principal_Test_Schedule.this, connected);
         if(!connected) {
             hide();
-            Toast toast = Toast.makeText(getActivity().getApplicationContext(), Constants.Error_Cannot_Load_Teachers, Toast.LENGTH_LONG);
+            Toast toast = Toast.makeText(getActivity().getApplicationContext(), Constants.Error_Cannot_Load_Tests, Toast.LENGTH_LONG);
             toast.setGravity(Gravity.CENTER, 0, 0);
             toast.show();
         }
