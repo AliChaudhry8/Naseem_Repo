@@ -109,10 +109,6 @@ public class Principal_Student_Teacher_Adapter extends RecyclerView.Adapter<Prin
 
     public void addUser(User_BO u){
         users.add(u);
-        HashSet<User_BO> set = new HashSet<User_BO>();
-        set.addAll(users);
-        users.clear();
-        users.addAll(set);
         notifyDataSetChanged();
     }
 

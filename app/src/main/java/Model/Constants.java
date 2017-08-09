@@ -26,7 +26,7 @@ public class Constants {
     public static final String Error_Cannot_Load_Students = "No Internet Connection Found.\nCan't load Students";
     public static final String Error_Cannot_Load_Teachers = "No Internet Connection Found.\nCan't load Teachers";
     public static final String Error_Cannot_Load_Tests = "No Internet Connection Found.\nCan't load Tests";
-
+    public static final String No_Submission_From_Student = " did not attempt this Test yet.";
     // URL's Strings
     public static final String URL_Base = "http://www.naseem.education/";
     public static final String URL_Base_1 = "https://naseem-prod-ibrahimbashir.c9users.io/";
@@ -43,6 +43,7 @@ public class Constants {
     public static final String URL_Principal_Update_User = URL_Base_1 + "api/v1/users/update_user?auth=";
     public static final String URL_Principal_Get_Test_Schedule = URL_Base_1 + "api/v1/tests/getPrincipalTestSchedule?auth=";
     public static final String URL_Principal_Get_Test_Attempts = URL_Base_1 + "api/v1/tests/getPrincipalTestAttempts?auth=";
+    public static final String URL_Principal_Get_Students_Test_Attempts = URL_Base_1 + "api/v1/tests/student_attempts?auth=";
 
     // Keys for USER JSON Object
     public static final String User_Authenticating = "Authenticating . . .";
@@ -154,6 +155,14 @@ public class Constants {
     public static final String Principal_Key_Update_User_Telephone = "telephone";
     public static final String Principal_Key_Update_User_Avatar = "avatar";
 
+
+    // Principal Students Test Attempts Key
+    public static final String Principal_Key_Students_List = "students";
+    public static final String Principal_Key_Students_List_Taken = "taken";
+    public static final String Principal_Key_Students_List_User = "user";
+    public static final String Principal_Key_Students_List_Id = "id";
+    public static final String Principal_Key_Students_List_First_Name = "first_name";
+    public static final String Principal_Key_Students_List_Second_Name = "second_name";
 
     // Amazon S3 Credentials
     public static final String AWS_ACCESS_KEY = "AKIAIKAQNA5QCCNP6YQQ";

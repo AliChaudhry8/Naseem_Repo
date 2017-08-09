@@ -95,13 +95,18 @@
     <string name="string_attempts">Attempts</string>
     <string name="string_reload_principal_test_taken">Failed to load Test Taken.\nTry Again</string>
     <string name="string_reload_principal_test_schedule">Failed to load Test Schedule.\nTry Again</string>
-    <string name="string_reload_principal_test_attempts">Failed to load Students Attempts.\nTry Again</string>
+    <string name="string_reload_principal_test_attempts">Failed to load Test Attempts.\nTry Again</string>
+    <string name="string_reload_principal_test_attempts_1">Failed to load Students Test Attempts.\nTry Again</string>
     <string name="string_principal_teacher_name">Teacher Name:</string>
     <string name="string_principal_test_name">Test Name:</string>
     <string name="string_principal_test_date">Test Date:</string>
     <string name="string_principal_username">Username:</string>
     <string name="string_principal_school_name">School Name:</string>
     <string name="string_principal_section_name">Section Name:</string>
+    <string name="string_principal_students_label">Listing Students</string>
+    <string name="string_principal_student_first_name">First Name: </string>
+    <string name="string_principal_student_second_name">Second Name: </string>
+    <string name="string_principal_student_attempt">Attempt: </string>
     <string-array name="array_age">
         <item>Select Age</item>
         <item>1</item>

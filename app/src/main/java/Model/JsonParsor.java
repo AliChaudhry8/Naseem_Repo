@@ -7,6 +7,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 import BussinessObjects.Parent_Test_BO;
+import BussinessObjects.Principal_Students_Test_Attempts_BO;
 import BussinessObjects.Principal_Test_BO;
 import BussinessObjects.Show_Test_BO.BooleanQuestions;
 import BussinessObjects.Show_Test_BO.Complete_Test_BO;
@@ -527,6 +528,28 @@ public class JsonParsor {
         catch (Exception e){
             test = null;
             return test;
+        }
+    }
+
+    public ArrayList<Principal_Students_Test_Attempts_BO> parse_students_attempts(String s){
+        ArrayList<Principal_Students_Test_Attempts_BO> attempts = new ArrayList<Principal_Students_Test_Attempts_BO>();
+        try{
+            JSONObject jsonObject = new JSONObject(s);
+            JSONArray jsonArray = jsonObject.getJSONArray(Constants.Principal_Key_Students_List);
+            for(int i=0; i<jsonArray.length(); i++){
+                JSONObject js = jsonArray.getJSONObject(i);
+                Principal_Students_Test_Attempts_BO bo = new Principal_Students_Test_Attempts_BO();
+                bo.setTaken(js.getInt(Constants.Principal_Key_Students_List_Taken));
+                JSONObject js1 = js.getJSONObject(Constants.Principal_Key_Students_List_User);
+                bo.setUser_id(js1.getInt(Constants.Principal_Key_Students_List_Id));
+                bo.setFirst_name(js1.getString(Constants.Principal_Key_Students_List_First_Name));
+                bo.setSecond_name(js1.getString(Constants.Principal_Key_Students_List_Second_Name));
+                attempts.add(bo);
+            }
+            return attempts;
+        }catch (Exception e){
+            attempts = null;
+            return attempts;
         }
     }
 }
