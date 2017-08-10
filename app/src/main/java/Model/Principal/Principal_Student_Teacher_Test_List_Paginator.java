@@ -14,7 +14,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.plan9.naseemdev.naseem.Principal_Test_Attempts;
+import com.plan9.naseemdev.naseem.TeacherStudentTestList;
 import com.srx.widget.PullCallback;
 import com.srx.widget.PullToLoadView;
 
@@ -28,42 +28,48 @@ import Model.JsonParsor;
 import Model.Session;
 
 /**
- * Created by Muhammad Taimoor on 8/4/2017.
+ * Created by Muhammad Taimoor on 8/10/2017.
  */
 
-public class Principal_Test_Attempts_Paginator {
+public class Principal_Student_Teacher_Test_List_Paginator {
     private Context context;
     private PullToLoadView pullToLoadView;
     private RecyclerView recyclerView;
-    private Principal_Test_Adapter adapter;
+    private Principal_Student_Teacher_Test_List_Adapter adapter;
     private boolean isLoading = false;
     private boolean hasLoadedAll = false;
     private int page_number;
     private Session session;
-    private Principal_Test_Attempts test_attempts;
+    private TeacherStudentTestList teacherStudentTest;
     private boolean connected;
-    public Principal_Test_Attempts_Paginator(Context c, PullToLoadView loadView, Principal_Test_Attempts p, boolean con){
+    private String role;
+    private int id;
+    public Principal_Student_Teacher_Test_List_Paginator(Context c, PullToLoadView loadView, TeacherStudentTestList list, boolean con, String r, int i) {
+        teacherStudentTest = list;
         context = c;
         pullToLoadView = loadView;
         session = new Session(context);
         recyclerView = pullToLoadView.getRecyclerView();
         recyclerView.setLayoutManager(new LinearLayoutManager(context, LinearLayout.VERTICAL, false));
-        adapter = new Principal_Test_Adapter(context, new ArrayList<Principal_Test_BO>(), recyclerView);
+        role = r;
+        id = i;
+        adapter = new Principal_Student_Teacher_Test_List_Adapter(context, new ArrayList<Principal_Test_BO>(), recyclerView, role);
         recyclerView.setAdapter(adapter);
         page_number = 1;
-        test_attempts = p;
+        teacherStudentTest = list;
         connected = con;
         if(connected)
             initialize_paginater();
     }
-    public void initialize_paginater(){
+
+    public void initialize_paginater() {
         pullToLoadView.isLoadMoreEnabled(true);
         pullToLoadView.setPullCallback(new PullCallback() {
             @Override
             public void onLoadMore() {load_data(page_number);}
             @Override
             public void onRefresh() {
-                adapter.clear();
+                adapter.clearTest();
                 hasLoadedAll = false;
                 page_number = 1;
                 load_data(page_number);
@@ -78,8 +84,8 @@ public class Principal_Test_Attempts_Paginator {
 
     public void load_data(final int page){
         isLoading = true;
-        test_attempts.show();
-        String URL = Constants.URL_Principal_Get_Test_Attempts + session.getAuthenticationToken();
+        teacherStudentTest.show();
+        String URL = Constants.URL_Principal_Get_Students_Teacher_Test_List + session.getAuthenticationToken();
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL,
                 new Response.Listener<String>() {
                     @Override
@@ -87,49 +93,51 @@ public class Principal_Test_Attempts_Paginator {
                         isLoading = false;
                         if(s.equals("-1")){
                             session.destroy_session();
-                            test_attempts.unAuthorized();
+                            teacherStudentTest.unAuthorized();
                             return;
                         }
                         else if (s.equals("-2")){
-                            test_attempts.hide();
-                            Toast toast = Toast.makeText(context, Constants.Error_Unrecognized_Error, Toast.LENGTH_LONG);
+                            teacherStudentTest.hide();
+                            Toast toast = Toast.makeText(context, Constants.Error_Unrecognized_Error + " Exception At Server", Toast.LENGTH_LONG);
                             toast.setGravity(Gravity.CENTER, 0, 0);
                             toast.show();
                         }
                         else {
                             JsonParsor jsonParsor = new JsonParsor();
-                            ArrayList<Principal_Test_BO> tests = jsonParsor.parse_Principal_Test(s);
+                            ArrayList<Principal_Test_BO> tests = jsonParsor.parse_Principal_Student_teacher_Test_List(s);
                             if(tests != null){
                                 for (int i=0; i<tests.size(); i++){
-                                    tests.get(i).setStatus(2);
+                                    //tests.get(i).setStatus(2);
                                     adapter.addTest(tests.get(i));
                                 }
                                 pullToLoadView.setComplete();
                                 page_number = page_number + 1;
-                                test_attempts.show();
+                                teacherStudentTest.show();
                             }
                             else {
-                                test_attempts.hide();
-                                Toast toast = Toast.makeText(context, Constants.Error_Unrecognized_Error, Toast.LENGTH_LONG);
+                                teacherStudentTest.hide();
+                                Toast toast = Toast.makeText(context, Constants.Error_Unrecognized_Error + " Exception During Parsing", Toast.LENGTH_LONG);
                                 toast.setGravity(Gravity.CENTER, 0, 0);
                                 toast.show();
                             }
+
                         }
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError volleyError) {
                 isLoading = false;
-                Toast toast = Toast.makeText(context, Constants.Error_Unrecognized_Error, Toast.LENGTH_LONG);
+                Toast toast = Toast.makeText(context, Constants.Error_Unrecognized_Error + " Volley Error" , Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.CENTER, 0, 0);
                 toast.show();
-                test_attempts.hide();
+                teacherStudentTest.hide();
             }
         }){
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String,String> map = new HashMap<String,String>();
                 map.put(Constants.User_Key_Id,String.valueOf(session.getUserId()));
+                map.put(Constants.Principal_Key_Student_Id,String.valueOf(id));
                 map.put(Constants.User_Key_Page,String.valueOf(page));
                 return map;
             }

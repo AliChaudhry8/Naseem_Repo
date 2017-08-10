@@ -80,8 +80,12 @@
             android:name=".PrincipalShowScheduleTest"
             android:label=""
             android:parentActivityName=".Principal_Test" />
-        <activity android:name=".PrincipalShowTestAttempts"
-            android:parentActivityName=".Principal_Test"></activity>
+        <activity
+            android:name=".PrincipalShowTestAttempts"
+            android:parentActivityName=".Principal_Test" />
+        <activity
+            android:name=".TeacherStudentTestList"
+            android:parentActivityName=".Principal_Test"/>
     </application>
 
 </manifest>

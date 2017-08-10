@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.plan9.naseemdev.naseem.R;
 import com.plan9.naseemdev.naseem.Student_Teacher_Profile;
+import com.plan9.naseemdev.naseem.TeacherStudentTestList;
 
 import BussinessObjects.User_BO;
 
@@ -60,7 +61,13 @@ public class Custom_Dialog extends Dialog implements View.OnClickListener {
                 break;
             }
             case R.id.dialog_test:{
-                Toast.makeText(getContext(), "Test", Toast.LENGTH_LONG).show();
+                Bundle b = new Bundle();
+                b.putSerializable("user", user);
+                Intent it = new Intent(activity, TeacherStudentTestList.class);
+                it.putExtras(b);
+                it.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                dismiss();
+                activity.startActivity(it);
                 dismiss();
                 break;
             }

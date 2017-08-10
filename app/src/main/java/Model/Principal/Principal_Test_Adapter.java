@@ -26,13 +26,11 @@ public class Principal_Test_Adapter extends RecyclerView.Adapter<Principal_Test_
     private Context context;
     private ArrayList<Principal_Test_BO> tests;
     private RecyclerView recyclerView;
-    private int count;
 
     public Principal_Test_Adapter(Context c, ArrayList<Principal_Test_BO> p, RecyclerView r){
         context = c;
         tests = p;
         recyclerView = r;
-        count = 0;
     }
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -67,19 +65,13 @@ public class Principal_Test_Adapter extends RecyclerView.Adapter<Principal_Test_
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         Principal_Test_BO test = tests.get(position);
-        count = count + 1;
-        holder.test_name.setText(test.getName() + " C: " + count + "");
+        holder.test_name.setText(test.getName());
         holder.teacher_name.setText("");
         if(test.getStart_time().equals("") || test.getStart_time().equals(null) || test.getStart_time().equals("null"))
             holder.start_time.setText("");
         else {
             String []startDateTime = test.getStart_time().split("T");
-            String [] testTime = startDateTime[1].split(":");
-            //int testhour = Integer.parseInt(testTime[0]);
-            //int testminute = Integer.parseInt(testTime[1]);
-            //holder.start_time.setText(test.getStart_time());
             String str = startDateTime[0].substring(0, 4);
-            //holder.start_time.setText(startDateTime[0] + " " + testhour + ":"+  testminute +"");
             holder.start_time.setText(str);
             holder.teacher_name.setText(test.getTeacher_name());
         }
