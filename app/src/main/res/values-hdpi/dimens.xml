@@ -113,6 +113,7 @@
     <dimen name="principal_test_layout_margin">1dp</dimen>
     <dimen name="principal_student_list_label_margin">7dp</dimen>
     <dimen name="principal_student_list_label_text_size">16dp</dimen>
+    <dimen name="principal_student_teacher_label_margin_padding">3dp</dimen>
 
     <!-- Custom Dialog Dimensions -->
     <dimen name="dialog_text_size">16dp</dimen>

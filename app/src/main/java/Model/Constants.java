@@ -48,7 +48,8 @@ public class Constants {
     public static final String URL_Principal_Get_Test_Schedule = URL_Base_1 + "api/v1/tests/getPrincipalTestSchedule?auth=";
     public static final String URL_Principal_Get_Test_Attempts = URL_Base_1 + "api/v1/tests/getPrincipalTestAttempts?auth=";
     public static final String URL_Principal_Get_Students_Test_Attempts = URL_Base_1 + "api/v1/tests/student_attempts?auth=";
-    public static final String URL_Principal_Get_Students_Teacher_Test_List = URL_Base_1 + "api/v1/tests/student_test_list?auth=";
+    public static final String URL_Principal_Get_Students_Test_List = URL_Base_1 + "api/v1/tests/student_test_list?auth=";
+    public static final String URL_Principal_Get_Teacher_Test_List = URL_Base_1 + "api/v1/tests/teacher_test_list?auth=";
 
     // Keys for USER JSON Object
     public static final String User_Authenticating = "Authenticating . . .";
@@ -169,6 +170,7 @@ public class Constants {
     public static final String Principal_Key_Students_List_First_Name = "first_name";
     public static final String Principal_Key_Students_List_Second_Name = "second_name";
     public static final String Principal_Key_Student_Id = "student_id";
+    public static final String Principal_Key_Teacher_Id = "teacher_id";
     public static final String Principal_Key_Student_Teacher_Test_List_Attempted = "attempted";
 
     // Amazon S3 Credentials

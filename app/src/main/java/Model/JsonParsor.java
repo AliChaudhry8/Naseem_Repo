@@ -555,7 +555,7 @@ public class JsonParsor {
     }
 
 
-    public ArrayList<Principal_Test_BO> parse_Principal_Student_teacher_Test_List(String s){
+    public ArrayList<Principal_Test_BO> parse_Principal_Student_Test_List(String s){
         ArrayList<Principal_Test_BO> test = new ArrayList<Principal_Test_BO>();
         try{
             JSONObject object = new JSONObject(s);
@@ -567,6 +567,27 @@ public class JsonParsor {
                 p.setName(jsonObject.getString(Constants.Key_Test_Name));
                 p.setTeacher_name(jsonObject.getString(Constants.Key_Test_Teacher_Name));
                 p.setStatus(jsonObject.getInt(Constants.Principal_Key_Student_Teacher_Test_List_Attempted));
+                test.add(p);
+            }
+            return test;
+        }
+        catch (Exception e){
+            test = null;
+            return test;
+        }
+    }
+
+
+    public ArrayList<Principal_Test_BO> parse_Principal_Teacher_Test_List(String s){
+        ArrayList<Principal_Test_BO> test = new ArrayList<Principal_Test_BO>();
+        try{
+            JSONObject object = new JSONObject(s);
+            JSONArray js = object.getJSONArray(Constants.Key_Test_Schedule);
+            for(int i=0; i<js.length(); i++){
+                JSONObject jsonObject = js.getJSONObject(i);
+                Principal_Test_BO p = new Principal_Test_BO();
+                p.setId(jsonObject.getInt(Constants.Key_Test_Id));
+                p.setName(jsonObject.getString(Constants.Key_Test_Name));
                 test.add(p);
             }
             return test;

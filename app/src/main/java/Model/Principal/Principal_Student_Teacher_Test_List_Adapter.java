@@ -63,6 +63,13 @@ public class Principal_Student_Teacher_Test_List_Adapter extends RecyclerView.Ad
                 holder.test_attempt.setText("No Submission");
             }
         }
+        else if (role.equals("Teacher")){
+            holder.label_teacher_name.setVisibility(View.GONE);
+            holder.teacher_name.setVisibility(View.GONE);
+            holder.label_test_attempt.setVisibility(View.GONE);
+            holder.test_attempt.setVisibility(View.GONE);
+            holder.teacher_label.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override

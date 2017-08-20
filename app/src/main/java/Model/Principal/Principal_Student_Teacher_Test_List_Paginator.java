@@ -58,6 +58,7 @@ public class Principal_Student_Teacher_Test_List_Paginator {
         page_number = 1;
         teacherStudentTest = list;
         connected = con;
+        Toast.makeText(context, "Role in Paginator: " + role, Toast.LENGTH_LONG).show();
         if(connected)
             initialize_paginater();
     }
@@ -66,13 +67,21 @@ public class Principal_Student_Teacher_Test_List_Paginator {
         pullToLoadView.isLoadMoreEnabled(true);
         pullToLoadView.setPullCallback(new PullCallback() {
             @Override
-            public void onLoadMore() {load_data(page_number);}
+            public void onLoadMore() {
+                if(role.equals("Student"))
+                    load_data_student(page_number);
+                else if (role.equals("Teacher"))
+                    load_data_teacher(page_number);
+            }
             @Override
             public void onRefresh() {
                 adapter.clearTest();
                 hasLoadedAll = false;
                 page_number = 1;
-                load_data(page_number);
+                if(role.equals("Student"))
+                    load_data_student(page_number);
+                else if (role.equals("Teacher"))
+                    load_data_teacher(page_number);
             }
             @Override
             public boolean isLoading() {return isLoading;}
@@ -82,10 +91,10 @@ public class Principal_Student_Teacher_Test_List_Paginator {
         pullToLoadView.initLoad();
     }
 
-    public void load_data(final int page){
+    public void load_data_student(final int page){
         isLoading = true;
         teacherStudentTest.show();
-        String URL = Constants.URL_Principal_Get_Students_Teacher_Test_List + session.getAuthenticationToken();
+        String URL = Constants.URL_Principal_Get_Students_Test_List + session.getAuthenticationToken();
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL,
                 new Response.Listener<String>() {
                     @Override
@@ -98,16 +107,15 @@ public class Principal_Student_Teacher_Test_List_Paginator {
                         }
                         else if (s.equals("-2")){
                             teacherStudentTest.hide();
-                            Toast toast = Toast.makeText(context, Constants.Error_Unrecognized_Error + " Exception At Server", Toast.LENGTH_LONG);
+                            Toast toast = Toast.makeText(context, Constants.Error_Unrecognized_Error, Toast.LENGTH_LONG);
                             toast.setGravity(Gravity.CENTER, 0, 0);
                             toast.show();
                         }
                         else {
                             JsonParsor jsonParsor = new JsonParsor();
-                            ArrayList<Principal_Test_BO> tests = jsonParsor.parse_Principal_Student_teacher_Test_List(s);
+                            ArrayList<Principal_Test_BO> tests = jsonParsor.parse_Principal_Student_Test_List(s);
                             if(tests != null){
                                 for (int i=0; i<tests.size(); i++){
-                                    //tests.get(i).setStatus(2);
                                     adapter.addTest(tests.get(i));
                                 }
                                 pullToLoadView.setComplete();
@@ -116,7 +124,7 @@ public class Principal_Student_Teacher_Test_List_Paginator {
                             }
                             else {
                                 teacherStudentTest.hide();
-                                Toast toast = Toast.makeText(context, Constants.Error_Unrecognized_Error + " Exception During Parsing", Toast.LENGTH_LONG);
+                                Toast toast = Toast.makeText(context, Constants.Error_Unrecognized_Error, Toast.LENGTH_LONG);
                                 toast.setGravity(Gravity.CENTER, 0, 0);
                                 toast.show();
                             }
@@ -127,7 +135,7 @@ public class Principal_Student_Teacher_Test_List_Paginator {
             @Override
             public void onErrorResponse(VolleyError volleyError) {
                 isLoading = false;
-                Toast toast = Toast.makeText(context, Constants.Error_Unrecognized_Error + " Volley Error" , Toast.LENGTH_LONG);
+                Toast toast = Toast.makeText(context, Constants.Error_Unrecognized_Error, Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.CENTER, 0, 0);
                 toast.show();
                 teacherStudentTest.hide();
@@ -138,6 +146,71 @@ public class Principal_Student_Teacher_Test_List_Paginator {
                 Map<String,String> map = new HashMap<String,String>();
                 map.put(Constants.User_Key_Id,String.valueOf(session.getUserId()));
                 map.put(Constants.Principal_Key_Student_Id,String.valueOf(id));
+                map.put(Constants.User_Key_Page,String.valueOf(page));
+                return map;
+            }
+        };
+
+        RequestQueue requestQueue = Volley.newRequestQueue(context);
+        requestQueue.add(stringRequest);
+    }
+
+
+    public void load_data_teacher(final int page){
+        isLoading = true;
+        teacherStudentTest.show();
+        String URL = Constants.URL_Principal_Get_Teacher_Test_List + session.getAuthenticationToken();
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String s) {
+                        isLoading = false;
+                        if(s.equals("-1")){
+                            session.destroy_session();
+                            teacherStudentTest.unAuthorized();
+                            return;
+                        }
+                        else if (s.equals("-2")){
+                            teacherStudentTest.hide();
+                            Toast toast = Toast.makeText(context, Constants.Error_Unrecognized_Error, Toast.LENGTH_LONG);
+                            toast.setGravity(Gravity.CENTER, 0, 0);
+                            toast.show();
+                        }
+                        else {
+                            JsonParsor jsonParsor = new JsonParsor();
+                            ArrayList<Principal_Test_BO> tests = jsonParsor.parse_Principal_Teacher_Test_List(s);
+                            if(tests != null){
+                                for (int i=0; i<tests.size(); i++){
+                                    adapter.addTest(tests.get(i));
+                                }
+                                pullToLoadView.setComplete();
+                                page_number = page_number + 1;
+                                teacherStudentTest.show();
+                            }
+                            else {
+                                teacherStudentTest.hide();
+                                Toast toast = Toast.makeText(context, Constants.Error_Unrecognized_Error, Toast.LENGTH_LONG);
+                                toast.setGravity(Gravity.CENTER, 0, 0);
+                                toast.show();
+                            }
+
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError volleyError) {
+                isLoading = false;
+                Toast toast = Toast.makeText(context, Constants.Error_Unrecognized_Error, Toast.LENGTH_LONG);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+                teacherStudentTest.hide();
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String,String> map = new HashMap<String,String>();
+                map.put(Constants.User_Key_Id,String.valueOf(session.getUserId()));
+                map.put(Constants.Principal_Key_Teacher_Id,String.valueOf(id));
                 map.put(Constants.User_Key_Page,String.valueOf(page));
                 return map;
             }
