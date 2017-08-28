@@ -121,12 +121,12 @@ public class Constants {
     public static final String Test_Key_Generic_Std_Answer = "std_answer";
     public static final String Test_Key_Generic_Test_Id = "test_id";
     public static final String Test_Key_Generic_Answer = "answer";
-    public static final String Test_Key_Single_Choice_Options = "list_item_single_choice_options";
+    public static final String Test_Key_Single_Choice_Options = "single_choice_options";
     public static final String Test_Key_Single_Choice_Options_Id = "id";
     public static final String Test_Key_Single_Choice_Options_Optioon = "option";
     public static final String Test_Key_Single_Choice_Options_Correct = "correct";
     public static final String Test_Key_Single_Choice_Options_Question_Id = "single_choice_question_id";
-    public static final String Test_Key_Multi_Choice_Options = "list_item_multi_choice_options";
+    public static final String Test_Key_Multi_Choice_Options = "multi_choice_options";
     public static final String Test_Key_Multi_Choice_Options_Id = "id";
     public static final String Test_Key_Multi_Choice_Options_Option = "option";
     public static final String Test_Key_Multi_Choice_Options_Correct = "correct";

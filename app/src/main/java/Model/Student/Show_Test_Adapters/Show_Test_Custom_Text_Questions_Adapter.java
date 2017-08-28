@@ -41,7 +41,6 @@ public class Show_Test_Custom_Text_Questions_Adapter extends ArrayAdapter<Text_Q
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
-        //View superView = super.getView(position, convertView, parent);
         Text_Questions questions = getItem(position);
         ViewHolder v = null;
         try {

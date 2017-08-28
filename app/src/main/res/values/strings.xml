@@ -223,4 +223,8 @@
     <!-- Parent Activity Strings -->
     <string name="string_parent_not_authorized">Your account has not yet been authorized by the student you have chosen.\nTo authorize this account, access the Parents tab from the student\'s account.</string>
     <string name="title_activity_principal_show_schedule_test">PrincipalShowScheduleTest</string>
+
+
+    <!-- Start Test Activity -->
+    <string name="hint_enter_answer">Enter Your Answer</string>
 </resources>

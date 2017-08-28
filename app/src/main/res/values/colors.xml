@@ -22,7 +22,7 @@
 
     <color name="colorButton">#29fa95</color>
     <color name="colorButton1">#29fafa</color>
-
+    <color name="test_background">#00D999</color>
     <color name="color_test_list_view_item_background_color">#FFCC80</color>
     <color name="color_test_list_view_item_inner_background_color">#FFE0B2</color>
     <color name="color_test_list_view_item_button_background_color">#FF80AA</color>

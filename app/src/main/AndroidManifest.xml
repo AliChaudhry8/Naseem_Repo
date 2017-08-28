@@ -51,7 +51,8 @@
             android:parentActivityName=".Student" />
         <activity
             android:name=".TakeTest"
-            android:parentActivityName=".Student" />
+            android:parentActivityName=".Student"
+            android:windowSoftInputMode="adjustPan"/>
         <activity
             android:name=".Profile"
             android:theme="@style/AppTheme.NoActionBar" />

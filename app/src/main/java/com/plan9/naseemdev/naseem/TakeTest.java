@@ -8,10 +8,14 @@ import android.net.NetworkInfo;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ExpandableListView;
 import android.widget.LinearLayout;
@@ -37,6 +41,8 @@ import Model.Constants;
 import Model.JsonParsor;
 import Model.ListUtils;
 import Model.Session;
+import Model.Student.Start_Test_Adapters.Take_Test_Single_Choice_Questions;
+import Model.Student.Start_Test_Adapters.Take_Test_Text_Question_Adapter;
 
 public class TakeTest extends AppCompatActivity {
 
@@ -45,11 +51,13 @@ public class TakeTest extends AppCompatActivity {
     private String URL;
     private TextView attempt_time;
     private Session session;
-    private ListView list_text_questions, list_paragraph_questions, list_boolean_questions;
+    private ListView list_paragraph_questions, list_boolean_questions;
     private ExpandableListView list_single_choice_questions, list_multi_choice_questions;
     private LinearLayout reload, load_test;
     private TextView label_text_questions, label_single_choice_questions, label_multi_choice_questions, label_paragraph_questions, label_boolean_questions;
     private View line_text_question, line_single_choice_questions, line_multi_choice_questions, line_paragraph_questions, line_boolean_questions;
+    private RecyclerView list_text_questions;
+    private Complete_Test_BO test_object;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,11 +81,8 @@ public class TakeTest extends AppCompatActivity {
         });
         load_test = (LinearLayout)findViewById(R.id.load_test);
 
-        list_text_questions = (ListView)findViewById(R.id.list_text_questions);
-        list_text_questions.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {}
-        });
+        list_text_questions = (RecyclerView) findViewById(R.id.list_text_questions);
+        list_text_questions.setNestedScrollingEnabled(false);
 
         list_single_choice_questions = (ExpandableListView) findViewById(R.id.list_single_choice_questions);
         list_single_choice_questions.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
@@ -85,6 +90,13 @@ public class TakeTest extends AppCompatActivity {
             public boolean onGroupClick(ExpandableListView expandableListView, View view, int i, long l) {
                 list_single_choice_questions.expandGroup(i);
                 return true;
+            }
+        });
+        list_single_choice_questions.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+            @Override
+            public boolean onChildClick(ExpandableListView expandableListView, View view, int i, int i1, long l) {
+                Toast.makeText(getApplicationContext(), "Parent Number: " + i + " Child Number: " + i1, Toast.LENGTH_LONG).show();
+                return false;
             }
         });
 
@@ -159,7 +171,9 @@ public class TakeTest extends AppCompatActivity {
         switch (item.getItemId()) {
             // Respond to the action bar's Up/Home button
             case android.R.id.home:{
+                //Intent it = new Intent(this, Student.class);
                 finish();
+                //startActivity(it);
                 break;
             }
         }
@@ -167,7 +181,9 @@ public class TakeTest extends AppCompatActivity {
     }
     @Override
     public void onBackPressed() {
+        //Intent it = new Intent(this, Student.class);
         finish();
+        //startActivity(it);
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -224,23 +240,23 @@ public class TakeTest extends AppCompatActivity {
                                 return;
                             }
                             JsonParsor js = new JsonParsor();
-                            Complete_Test_BO test_object = js.parseStartTest(s.toString());
+                            test_object = js.parseStartTest(s.toString());
                             if(test_object != null){
-                                Toast.makeText(getApplicationContext(), test_object.getText_questions().size() + " Text Questions Got", Toast.LENGTH_LONG).show();
-                                Toast.makeText(getApplicationContext(), test_object.getSingleChoiceQuestions().size() + " Single Choice Questions Got", Toast.LENGTH_LONG).show();
-                                Toast.makeText(getApplicationContext(), test_object.getMultipleChoiceQuestions().size() + " Multi Choice Questions Got", Toast.LENGTH_LONG).show();
-                                Toast.makeText(getApplicationContext(), test_object.getParagraphQuestions().size() + " Paragraph Questions Got", Toast.LENGTH_LONG).show();
-                                Toast.makeText(getApplicationContext(), test_object.getBooleanQuestions().size() + " Boolean Questions Got", Toast.LENGTH_LONG).show();
-                                /*if(test_object.getText_questions().size() > 0 ){
-                                    Show_Test_Custom_Text_Questions_Adapter adapter = new Show_Test_Custom_Text_Questions_Adapter(getApplicationContext(), test_object.getText_questions(), ShowTest.this);
+                                //Toast.makeText(getApplicationContext(), test_object.getMultipleChoiceQuestions().size() + " Multi Choice Questions Got", Toast.LENGTH_LONG).show();
+                                //Toast.makeText(getApplicationContext(), test_object.getParagraphQuestions().size() + " Paragraph Questions Got", Toast.LENGTH_LONG).show();
+                                //Toast.makeText(getApplicationContext(), test_object.getBooleanQuestions().size() + " Boolean Questions Got", Toast.LENGTH_LONG).show();
+                                if(test_object.getText_questions().size() > 0 ){
+                                    Take_Test_Text_Question_Adapter adapter = new Take_Test_Text_Question_Adapter(getApplicationContext(), test_object.getText_questions());
+                                    RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+                                    list_text_questions.setLayoutManager(mLayoutManager);
+                                    list_text_questions.setItemAnimator(new DefaultItemAnimator());
                                     list_text_questions.setAdapter(adapter);
-                                    ListUtils.setDynamicHeight(list_text_questions);
                                     list_text_questions.setVisibility(View.VISIBLE);
                                 }
                                 else
                                     list_text_questions.setVisibility(View.GONE);
                                 if(test_object.getSingleChoiceQuestions().size() > 0){
-                                    Show_Test_Custom_Single_Choice_Question_Adapter adapter = new Show_Test_Custom_Single_Choice_Question_Adapter(getApplicationContext(), test_object.getSingleChoiceQuestions(), ShowTest.this);
+                                    Take_Test_Single_Choice_Questions adapter = new Take_Test_Single_Choice_Questions(getApplicationContext(), test_object.getSingleChoiceQuestions());
                                     list_single_choice_questions.setAdapter(adapter);
                                     int size = test_object.getSingleChoiceQuestions().size();
                                     for (int i=0; i<size; i++) {
@@ -252,7 +268,7 @@ public class TakeTest extends AppCompatActivity {
                                 }
                                 else
                                     list_single_choice_questions.setVisibility(View.GONE);
-                                if(test_object.getMultipleChoiceQuestions().size() > 0){
+                                /*if(test_object.getMultipleChoiceQuestions().size() > 0){
                                     Show_Test_Custom_Multi_Choice_Question_Adapter adapter = new Show_Test_Custom_Multi_Choice_Question_Adapter(getApplicationContext(), test_object.getMultipleChoiceQuestions(), ShowTest.this);
                                     list_multi_choice_questions.setAdapter(adapter);
                                     int size = test_object.getMultipleChoiceQuestions().size();
