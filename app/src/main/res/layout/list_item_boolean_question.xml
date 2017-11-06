@@ -39,31 +39,34 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/colorText"/>
-    <RadioButton
-        android:id="@+id/option_1"
+    <RadioGroup
+        android:id="@+id/bool_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+        <RadioButton
+            android:id="@+id/bool_true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="True"/>
+        <RadioButton
+            android:id="@+id/bool_false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="False"/>
+    </RadioGroup>
+    <android.support.v7.widget.AppCompatButton
         android:textStyle="bold"
         android:textSize="@dimen/show_test_activity_text_size"
         android:layout_margin="@dimen/show_test_activity_marks_padding"
-        android:layout_width="match_parent"
+        android:padding="@dimen/show_test_activity_edit_text_padding"
+        android:id="@+id/answer_boolean_question"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/colorTextBlack"
-        android:textAlignment="gravity"
-        android:gravity="left"
-        android:buttonTint="@color/color_radio_tint"
-        android:text="True"
-        android:paddingTop="5dp"/>
-
-    <RadioButton
-        android:id="@+id/option_2"
-        android:textStyle="bold"
-        android:textSize="@dimen/show_test_activity_text_size"
-        android:layout_margin="@dimen/show_test_activity_marks_padding"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorTextBlack"
-        android:textAlignment="gravity"
-        android:gravity="left"
-        android:buttonTint="@color/color_radio_tint"
-        android:text="False"
-        android:paddingTop="5dp"/>
+        android:textColor="@color/colorText"
+        android:background="@drawable/button_bg"
+        android:text="Answer"
+        android:inputType="textCapSentences|textMultiLine"
+        android:maxLength="2000"
+        android:maxLines="10"/>
 </LinearLayout>

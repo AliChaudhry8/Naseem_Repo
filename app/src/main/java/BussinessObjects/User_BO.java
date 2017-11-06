@@ -25,8 +25,34 @@ public class User_BO implements Serializable{
     private String Authentication_token;
     private String password;
     private String password_confirmation;
+    private boolean is_selected;
+    private int attempts;
+
+    public int getAttempts() {
+        return attempts;
+    }
+
+    public void setAttempts(int attempts) {
+        this.attempts = attempts;
+    }
+
+    public boolean is_selected() {
+        return is_selected;
+    }
+
+    public void setIs_selected(boolean is_selected) {
+        this.is_selected = is_selected;
+    }
+
+
 
     public User_BO() {
+    }
+    public User_BO(int id , String first , String second , String user) {
+        Id = id ;
+        First_name = first;
+        second_name = second;
+        Username = user;
     }
 
     public String getPassword() {

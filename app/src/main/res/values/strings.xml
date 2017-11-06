@@ -227,4 +227,330 @@
 
     <!-- Start Test Activity -->
     <string name="hint_enter_answer">Enter Your Answer</string>
+    <string name="title_activity_teacher">Teacher</string>
+
+    <!-- Teacher Activity Strings-->
+    <string name="string_Teacher_Tests">New Test</string>
+    <string name="string_Test_Edit">Edit</string>
+    <string name="string_Tests_AssignStudent">Assign Student</string>
+    <string name="string_Tests_StAttempts">Student Attempts</string>
+    <string name="string_Tests_Delete">Delete</string>
+    <string name="string_Test_Name">Test Name: </string>
+
+
+    <!-- Groups -->
+    <string name="string_Group_New">New Group</string>
+    <string name="string_Group_Name">Group Name: </string>
+    <string name="string_GroupName"> Name </string>
+
+
+    <!-- New Test-->
+    <string name="set_time_to_attempt_prompt">Set Time to Attempt</string>
+    <string-array name="set_time_to_attempt_arrays">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+    </string-array>
+    <string name="title_activity_draw__lines">Settings</string>
+
+    <string name="subject_spinner_prompt">Subject</string>
+    <string-array name="subject_spinner_arrays">
+        <item>Subject</item>
+        <item>Math</item>
+        <item>English</item>
+    </string-array>
+
+    <string name="grade_spinner_prompt">Grade</string>
+    <string-array name="grade_spinner_arrays">
+        <item>Grade</item>
+        <item>Class 1</item>
+        <item>Class 2</item>
+        <item>Class 3</item>
+        <item>Class 4</item>
+        <item>Class 5</item>
+    </string-array>
+
+    <string name="topic_spinner_prompt">Topic</string>
+    <string-array name="topic_spinner_arrays">
+        <item>Topic</item>
+        <item>Numbers</item>
+        <item>Addition</item>
+        <item>Subtraction</item>
+        <item>Comparison of Objects</item>
+        <item>Money</item>
+        <item>Time and Date</item>
+        <item>Geometry</item>
+    </string-array>
+
+    <string name="subtopic_spinner_prompt">Sub Topic</string>
+    <string-array name="subtopic_spinner_arrays">
+        <item>Sub Topic</item>
+
+    </string-array>
+
+    <string-array name="number_subtopic">
+        <item>Sub Topic</item>
+        <item>Numbers 0-9</item>
+        <item>Concept of 0, 10 or 100</item>
+        <item>Numbers 0 to 99 including place value</item>
+    </string-array>
+
+    <string-array name="addition_subtopic">
+        <item>Sub Topic</item>
+        <item>Addition  of one-digit numbers </item>
+        <item>Addition and Subtraction of two-digit numbers </item>
+        <item>Basic equations including identification of symbols + and =</item>
+    </string-array>
+
+    <string-array name="subtraction_subtopic">
+        <item>Sub Topic</item>
+        <item>Subtraction of one-digit numbers</item>
+        <item>Subtraction of two-digit numbers </item>
+        <item>Basic equations including identification of symbols - and =</item>
+    </string-array>
+
+    <string-array name="comparison_subtopic">
+        <item>Sub Topic</item>
+        <item>long, longer, longest,</item>
+        <item>short, shorter, shortest,</item>
+        <item>tall, taller, tallest,</item>
+        <item>high, higher, highest,</item>
+        <item>heavy, heavier, heaviest,</item>
+        <item>light, lighter, lightest</item>
+
+    </string-array>
+
+    <string-array name="money_subtopic">
+        <item>Sub Topic</item>
+        <item>Identify Pakistani notes and coins</item>
+        <item>Addition and Subtraction of currency</item>
+
+    </string-array>
+
+    <string-array name="time_subtopic">
+        <item>Sub Topic</item>
+        <item>Tell time in digital and analog clocks</item>
+        <item>Name and write days of the week in order</item>
+        <item>Name months of the year</item>
+
+
+    </string-array>
+
+    <string-array name="geometry_subtopic">
+        <item>Sub Topic</item>
+        <item>Identify the shapes like Circle, Rectangle</item>
+        <item>Describe Patterns</item>
+        <item>Identify Position like Far or Near, Inside or Outside</item>
+    </string-array>
+
+    <string name="inputmode_spinner_prompt">Input Mode</string>
+    <string-array name="inputmode_spinner_arrays">
+        <item>Input Mode</item>
+        <item>Audio - with Supplementry text</item>
+        <item>Audio - with Supplementry picture</item>
+        <item>Audio - with Supplementry video</item>
+        <item>Audio</item>
+        <item>Visual - video</item>
+        <item>Visual - pictures</item>
+        <item>Visual - pictures and videos</item>
+        <item>Visual - with audio</item>
+        <item>Visual - with audio and text</item>
+    </string-array>
+
+    <string name="presentationmode_spinner_prompt">Presentation Mode</string>
+    <string-array name="presentationmode_spinner_arrays">
+        <item>Presentation Mode</item>
+        <item>Audio - with Supplementry text</item>
+        <item>Audio - with Supplementry picture</item>
+        <item>Audio - with Supplementry video</item>
+        <item>Audio</item>
+        <item>Visual - video</item>
+        <item>Visual - pictures</item>
+        <item>Visual - pictures and videos</item>
+        <item>Visual - with audio</item>
+        <item>Visual - with audio and text</item>
+    </string-array>
+
+    <string name="cognitivefaculty_spinner_prompt">Cognitive Faculty</string>
+    <string-array name="cognitivefaculty_spinner_arrays">
+        <item>Cognitive Faculty</item>
+        <item>Intra - personal</item>
+        <item>Linguistic</item>
+        <item>Bodily - kinestethic</item>
+        <item>Inter - personal</item>
+        <item>Logical - Mathematic</item>
+        <item>Musical</item>
+        <item>Spatial</item>
+    </string-array>
+
+    <string name="steps_spinner_prompt">Steps</string>
+    <string-array name="steps_spinner_arrays">
+        <item>Steps</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+
+    <string name="teacherdifficulty_spinner_prompt">Teacher Difficulty</string>
+    <string-array name="teacherdifficulty_spinner_arrays">
+        <item>Teacher Difficulty</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+
+    <string name="deviation_spinner_prompt">Deviation</string>
+    <string-array name="deviation_spinner_arrays">
+        <item>Deviation</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+
+    <string name="ambiguity_spinner_prompt">Ambiguity</string>
+    <string-array name="ambiguity_spinner_arrays">
+        <item>Ambiguity</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+
+    <string name="clarity_spinner_prompt">Clarity</string>
+    <string-array name="clarity_spinner_arrays">
+        <item>Clarity</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+
+    <string name="blooms_spinner_prompt">Blooms</string>
+    <string-array name="blooms_spinner_arrays">
+        <item>Blooms</item>
+        <item>Recall</item>
+        <item>Understand</item>
+        <item>Apply</item>
+        <item>Analyze</item>
+        <item>Evaluate</item>
+        <item>Synthesize</item>
+    </string-array>
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+
+    <string name="pref_title_social_recommendations">Enable social recommendations</string>
+    <string name="pref_description_social_recommendations">Recommendations for people to contact
+        based on your message history
+    </string>
+
+    <string name="pref_title_display_name">Display name</string>
+    <string name="pref_default_display_name">John Smith</string>
+
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string-array name="pref_example_list_titles">
+        <item>Always</item>
+        <item>When possible</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>
+
+    <!-- Example settings for Data & Sync -->
+    <string name="pref_header_data_sync">Data &amp; sync</string>
+
+    <string name="pref_title_sync_frequency">Sync frequency</string>
+    <string-array name="pref_sync_frequency_titles">
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>-1</item>
+    </string-array>
+
+    <string-array name="list_preference_entries">
+        <item>Entry 1</item>
+        <item>Entry 2</item>
+        <item>Entry 3</item>
+    </string-array>
+
+    <string-array name="list_preference_entry_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="multi_select_list_preference_default_value" />
+
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+
+    <!-- Example settings for Notifications -->
+    <string name="pref_header_notifications">Notifications</string>
+
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+
+    <string name="pref_title_vibrate">Vibrate</string>
+    <string name="title_activity_draw">Draw</string>
 </resources>

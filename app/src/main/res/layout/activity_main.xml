@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:id="@+id/rootView"
     android:background="@drawable/b3"
-    tools:context="com.plan9.naseemdev.naseem.MainActivity">
+    tools:context="edu.plan9.naseemdev.naseem.MainActivity">
 
     <RelativeLayout
 

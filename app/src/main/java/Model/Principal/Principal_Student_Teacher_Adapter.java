@@ -2,14 +2,8 @@ package Model.Principal;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.content.pm.ActivityInfoCompat;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v7.widget.RecyclerView;
@@ -19,16 +13,14 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
+
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
-import com.plan9.naseemdev.naseem.Principal;
-import com.plan9.naseemdev.naseem.R;
-import com.plan9.naseemdev.naseem.Student_Teacher_Profile;
+
+import edu.plan9.naseemdev.naseem.R;
+
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
 
 import BussinessObjects.User_BO;
 import static android.view.View.GONE;

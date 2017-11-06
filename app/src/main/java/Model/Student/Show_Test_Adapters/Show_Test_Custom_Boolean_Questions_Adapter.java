@@ -8,8 +8,8 @@ import android.widget.ArrayAdapter;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
-import com.plan9.naseemdev.naseem.R;
-import com.plan9.naseemdev.naseem.ShowTest;
+import edu.plan9.naseemdev.naseem.R;
+import edu.plan9.naseemdev.naseem.ShowTest;
 
 import java.util.ArrayList;
 
@@ -51,8 +51,8 @@ public class Show_Test_Custom_Boolean_Questions_Adapter extends ArrayAdapter<Boo
                 v.title = (TextView)convertView.findViewById(R.id.title);
                 v.marks = (TextView)convertView.findViewById(R.id.marks);
                 v.correct = (TextView)convertView.findViewById(R.id.correct);
-                v.option_true = (RadioButton)convertView.findViewById(R.id.option_1);
-                v.option_false = (RadioButton)convertView.findViewById(R.id.option_2);
+                v.option_true = (RadioButton)convertView.findViewById(R.id.bool_true);
+                v.option_false = (RadioButton)convertView.findViewById(R.id.bool_false);
                 convertView.setTag(v);
             }
             else {

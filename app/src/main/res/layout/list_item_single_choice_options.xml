@@ -3,7 +3,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color_test_list_view_item_inner_background_color">
-    <RadioButton
+    <CheckBox
         android:id="@+id/option"
         android:textStyle="bold"
         android:textSize="@dimen/show_test_activity_text_size"
@@ -15,7 +15,7 @@
         android:gravity="left"
         android:buttonTint="@color/color_radio_tint"
         android:paddingTop="@dimen/show_test_activity_marks_padding"
-        android:focusable="false"
-        android:clickable="false"
-        android:focusableInTouchMode="false"/>
+        />
+
+
 </LinearLayout>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/custom_dialog_bg"
+    android:backgroundTint="@color/color_transparent_20_p"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="gravity"
+        android:gravity="center"
+        android:text="Edit Option"
+        android:textSize="@dimen/dialog_text_size"
+        android:layout_margin="@dimen/dialog_margin"
+        android:textColor="@color/color_transparent_95_p"/>
+    <View
+        android:id="@+id/line"
+        android:layout_below="@id/name"
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="@dimen/dialog_margin"
+        android:layout_marginBottom="@dimen/dialog_margin"
+        android:background="@color/color_transparent_95_p"/>
+    <LinearLayout
+        android:layout_below="@id/line"
+        android:layout_margin="@dimen/dialog_margin"
+        android:id="@+id/profile_test_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:weightSum="@integer/principal_content_main_button_panel_weight_sum">
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_alignParentTop="true"
+            android:id="@+id/edit_single_choise_question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/signIn_input_layout_margin"
+            android:layout_marginTop="@dimen/signIn_input_layout_margin"
+            android:layout_marginRight="@dimen/signIn_input_layout_margin">
+            <EditText
+                android:textColor="@color/colorText"
+                android:id="@+id/single_question_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Question"
+                android:padding="@dimen/signIn_edit_text_padding"
+                android:background="@drawable/edit_text_bg"
+                android:inputType="textPersonName"/>
+        </android.support.design.widget.TextInputLayout>
+        <CheckBox
+            android:id="@+id/is_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Is this the Right Answer"
+            android:layout_gravity="left"
+            android:layout_margin="10dp"/>
+
+
+
+    </LinearLayout>
+    <View
+        android:id="@+id/line_1"
+        android:layout_below="@id/name"
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="@dimen/dialog_margin"
+        android:layout_marginBottom="@dimen/dialog_margin"
+        android:background="@color/color_transparent_95_p"/>
+    <LinearLayout
+        android:layout_marginTop="@dimen/dialog_margin"
+        android:layout_marginBottom="@dimen/dialog_margin_extra"
+        android:layout_below="@id/profile_test_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/dialog_edit"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/user_button_bg_1"
+            android:layout_weight="@integer/user_content_main_button_panel_weight"
+            android:text="Edit"
+            android:textAlignment="gravity"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="@dimen/dialog_teacher_text_size"
+            android:layout_margin="@dimen/dialog_margin"/>
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/dialog_cancel"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/user_button_bg_1"
+            android:layout_weight="@integer/user_content_main_button_panel_weight"
+            android:text="Cancel"
+            android:textAlignment="gravity"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="@dimen/dialog_teacher_text_size"
+            android:layout_margin="@dimen/dialog_margin"/>
+    </LinearLayout>
+</LinearLayout>

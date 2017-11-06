@@ -1,18 +1,10 @@
 package Model;
 
-import android.content.Context;
-import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
-
-import com.plan9.naseemdev.naseem.R;
-
-import Model.Student.Start_Test_Adapters.Take_Test_Text_Question_Adapter;
 
 /**
  * Created by Muhammad Taimoor on 5/29/2017.

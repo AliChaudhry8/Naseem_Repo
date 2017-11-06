@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.plan9.naseemdev.naseem">
-
+    package="edu.plan9.naseemdev.naseem">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -23,6 +22,7 @@
         <service
             android:name="com.amazonaws.mobileconnectors.s3.transferutility.TransferService"
             android:enabled="true" />
+
         <activity
             android:name=".MainActivity"
             android:noHistory="true"
@@ -52,7 +52,7 @@
         <activity
             android:name=".TakeTest"
             android:parentActivityName=".Student"
-            android:windowSoftInputMode="adjustPan"/>
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".Profile"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -86,7 +86,18 @@
             android:parentActivityName=".Principal_Test" />
         <activity
             android:name=".TeacherStudentTestList"
-            android:parentActivityName=".Principal_Test"/>
+            android:parentActivityName=".Principal_Test" />
+        <activity
+            android:name=".Teacher"
+            android:label="@string/title_activity_teacher"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Groups" />
+        <activity android:name=".New_Group" />
+        <activity android:name=".Assign_Students_Group" />
+        <activity android:name=".New_Test" />
+        <activity android:name=".Assign_Group" />
+        <activity android:name=".Student_Attempts" />
+        <activity android:name=".Draw"></activity>
     </application>
 
 </manifest>

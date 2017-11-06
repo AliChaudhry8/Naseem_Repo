@@ -9,6 +9,15 @@ public class Single_Choice_Options {
     private String option;
     private boolean correct;
     private int question_id;
+    private boolean checked;
+
+    public boolean isChecked() {
+        return checked;
+    }
+
+    public void setChecked(boolean checked) {
+        this.checked = checked;
+    }
 
     public Single_Choice_Options(int id, String option, boolean correct, int question_id) {
         this.id = id;

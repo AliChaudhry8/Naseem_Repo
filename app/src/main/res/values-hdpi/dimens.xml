@@ -88,7 +88,7 @@
     <dimen name="show_test_activity_marks_padding">3dp</dimen>
     <dimen name="show_test_activity_loading_margin">20dp</dimen>
     <dimen name="show_test_activity_marks_width">55dp</dimen>
-    <dimen name="show_test_activity_text_size">15dp</dimen>
+    <dimen name="show_test_activity_text_size">18dp</dimen>
     <dimen name="show_test_activity_label_margin">8dp</dimen>
     <dimen name="show_test_activity_label_text_size">18dp</dimen>
     <dimen name="show_test_activity_horizontal_line_height">2dp</dimen>
@@ -121,6 +121,8 @@
     <dimen name="dialog_margin">4dp</dimen>
     <dimen name="dialog_margin_extra">8dp</dimen>
 
+    <!-- Custom Dialog Teacher Test -->
+    <dimen name="dialog_teacher_text_size">14dp</dimen>
 
     <!-- ************************************* -->
     <!-- ********** Parent Activity ********** -->

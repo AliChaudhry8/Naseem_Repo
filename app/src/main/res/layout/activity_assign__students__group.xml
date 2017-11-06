@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/b3"
+    tools:context="edu.plan9.naseemdev.naseem.Assign_Students_Group">
+
+    <LinearLayout
+        android:id="@+id/reload_assign_student_Layout"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/reload_assign_students"
+            android:layout_margin="@dimen/reload_image_margin"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/reload_image_WH"
+            android:src="@drawable/reload"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/reload_image_margin"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textSize="@dimen/reload_text_size"
+            android:textColor="@color/colorText"
+            android:textStyle="bold"
+            android:text="@string/string_reload_students"/>
+    </LinearLayout>
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/save_students"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/reload_assign_student_Layout"
+        android:text="Save"
+        android:padding="10dp"
+        android:textStyle="bold"
+        android:background="@drawable/user_button_bg_2" />
+    <com.srx.widget.PullToLoadView
+        android:id="@+id/pull_to_load_assign_students"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/save_students"/>
+
+
+</RelativeLayout>

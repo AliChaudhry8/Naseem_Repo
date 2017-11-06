@@ -17,7 +17,7 @@ import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
-import com.plan9.naseemdev.naseem.R;
+import edu.plan9.naseemdev.naseem.R;
 
 import java.util.ArrayList;
 
@@ -64,7 +64,7 @@ public class Custom_Video_Thumbnail_Adapter extends ArrayAdapter<Video_BO>{
             v.name.setText(""+video_bo.getDesc());
 
             final ProgressBar pB = (ProgressBar) convertView.findViewById(R.id.loadthumb);
-            String imgPath = "http://img.youtube.com/vi/" + video_bo.getLink() + "/2.jpg";
+            String imgPath = "http://img.youtube.com/vi/" + video_bo.getLink() + "/hqdefault.jpg";
             Glide.with(context).load(imgPath).listener(new RequestListener<Drawable>() {
                 @Override
                 public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {

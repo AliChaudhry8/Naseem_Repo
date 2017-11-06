@@ -11,9 +11,148 @@ public class BooleanQuestions {
     private int test_id;
     private int marks;
     private boolean std_answer;
+    private int checkMeta;
 
+    public int getCheckMeta() {
+        return checkMeta;
+    }
+
+    public void setCheckMeta(int checkMeta) {
+        this.checkMeta = checkMeta;
+    }
+
+    private String subject;
+    private String grade;
+    private String topic;
+    private String subtopic;
+    private String inputmode;
+    private String presentationmode;
+    private String cognitivefaculty;
+    private String steps;
+    private String teacherdifficulty;
+    private String deviation;
+    private String ambiguity;
+    private String clarity;
+    private String blooms;
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    public String getGrade() {
+        return grade;
+    }
+
+    public void setGrade(String grade) {
+        this.grade = grade;
+    }
+
+    public String getTopic() {
+        return topic;
+    }
+
+    public void setTopic(String topic) {
+        this.topic = topic;
+    }
+
+    public String getSubtopic() {
+        return subtopic;
+    }
+
+    public void setSubtopic(String subtopic) {
+        this.subtopic = subtopic;
+    }
+
+    public String getInputmode() {
+        return inputmode;
+    }
+
+    public void setInputmode(String inputmode) {
+        this.inputmode = inputmode;
+    }
+
+    public String getPresentationmode() {
+        return presentationmode;
+    }
+
+    public void setPresentationmode(String presentationmode) {
+        this.presentationmode = presentationmode;
+    }
+
+    public String getCognitivefaculty() {
+        return cognitivefaculty;
+    }
+
+    public void setCognitivefaculty(String cognitivefaculty) {
+        this.cognitivefaculty = cognitivefaculty;
+    }
+
+    public String getSteps() {
+        return steps;
+    }
+
+    public void setSteps(String steps) {
+        this.steps = steps;
+    }
+
+    public String getTeacherdifficulty() {
+        return teacherdifficulty;
+    }
+
+    public void setTeacherdifficulty(String teacherdifficulty) {
+        this.teacherdifficulty = teacherdifficulty;
+    }
+
+    public String getDeviation() {
+        return deviation;
+    }
+
+    public void setDeviation(String deviation) {
+        this.deviation = deviation;
+    }
+
+    public String getAmbiguity() {
+        return ambiguity;
+    }
+
+    public void setAmbiguity(String ambiguity) {
+        this.ambiguity = ambiguity;
+    }
+
+    public String getClarity() {
+        return clarity;
+    }
+
+    public void setClarity(String clarity) {
+        this.clarity = clarity;
+    }
+
+    public String getBlooms() {
+        return blooms;
+    }
+
+    public void setBlooms(String blooms) {
+        this.blooms = blooms;
+    }
 
     public BooleanQuestions() {
+        subject = "";
+        grade = "";
+        topic = "";
+        subtopic = "";
+        inputmode = "";
+        presentationmode = "";
+        cognitivefaculty = "";
+        steps = "";
+        teacherdifficulty = "";
+        deviation = "";
+        ambiguity = "";
+        clarity = "";
+        blooms = "";
     }
 
     public BooleanQuestions(int id, String title, boolean correct, int test_id, int marks, boolean std_answer) {

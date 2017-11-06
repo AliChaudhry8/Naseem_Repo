@@ -9,7 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.plan9.naseemdev.naseem.R;
+import edu.plan9.naseemdev.naseem.R;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

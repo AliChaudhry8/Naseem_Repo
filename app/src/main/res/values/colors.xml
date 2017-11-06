@@ -32,7 +32,7 @@
     <color name="color_transparent_80_p">#CC000000</color>
     <color name="color_transparent_60_p">#99000000</color>
     <color name="color_transparent_40_p">#66000000</color>
-    <color name="color_transparent_20_p">#33000000</color>
+    <color name="color_transparent_20_p">#00FFFFFF</color>
 
 
     <color name="colorImageBackground_1">#77fa7c</color>

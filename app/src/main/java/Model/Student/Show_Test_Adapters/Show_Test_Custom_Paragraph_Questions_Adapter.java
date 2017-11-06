@@ -8,8 +8,8 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.plan9.naseemdev.naseem.R;
-import com.plan9.naseemdev.naseem.ShowTest;
+import edu.plan9.naseemdev.naseem.R;
+import edu.plan9.naseemdev.naseem.ShowTest;
 import java.util.ArrayList;
 
 import BussinessObjects.Show_Test_BO.Marks;
@@ -19,7 +19,7 @@ import BussinessObjects.Show_Test_BO.ParagraphQuestions;
  * Created by Muhammad Taimoor on 7/12/2017.
  */
 
-public class Show_Test_Custom_Paragraph_Questions_Adapter extends ArrayAdapter<ParagraphQuestions> {
+public class  Show_Test_Custom_Paragraph_Questions_Adapter extends ArrayAdapter<ParagraphQuestions> {
 
     private Context context;
     private ArrayList<ParagraphQuestions> paragraphQuestions;

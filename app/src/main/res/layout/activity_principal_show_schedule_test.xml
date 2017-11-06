@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.plan9.naseemdev.naseem.PrincipalShowScheduleTest">
+    tools:context="edu.plan9.naseemdev.naseem.PrincipalShowScheduleTest">
     <TextView
         android:text="Principal Show Test Schedule"
         android:textSize="20dp"

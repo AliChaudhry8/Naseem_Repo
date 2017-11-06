@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.plan9.naseemdev.naseem.TeacherStudentTestList"
+    tools:context="edu.plan9.naseemdev.naseem.TeacherStudentTestList"
     android:background="@drawable/b3">
     <LinearLayout
         android:id="@+id/reload_student_test_list"

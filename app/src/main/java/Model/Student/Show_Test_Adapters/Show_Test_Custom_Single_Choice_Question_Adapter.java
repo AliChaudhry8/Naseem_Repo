@@ -5,11 +5,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
+import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
-import com.plan9.naseemdev.naseem.R;
-import com.plan9.naseemdev.naseem.ShowTest;
+import edu.plan9.naseemdev.naseem.R;
+import edu.plan9.naseemdev.naseem.ShowTest;
 
 import java.util.ArrayList;
 
@@ -30,7 +31,7 @@ public class Show_Test_Custom_Single_Choice_Question_Adapter extends BaseExpanda
     public Show_Test_Custom_Single_Choice_Question_Adapter(Context c, ArrayList<SingleChoiceQuestions> questions, ShowTest show){
         context = c;
         singleChoiceQuestions = questions;
-        showTest = show;
+        showTest =  show;
     }
 
     @Override
@@ -117,7 +118,7 @@ public class Show_Test_Custom_Single_Choice_Question_Adapter extends BaseExpanda
          if(view == null){
             view = LayoutInflater.from(context).inflate(R.layout.list_item_single_choice_options, null);
         }
-        RadioButton rb = (RadioButton)view.findViewById(R.id.option);
+        CheckBox rb = (CheckBox) view.findViewById(R.id.option);
         if(scq.getStd_answer() == sco.getId()){
             rb.setChecked(true);
         }

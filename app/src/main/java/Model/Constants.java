@@ -32,8 +32,8 @@ public class Constants {
 
 
     // URL's Strings
-    public static final String URL_Base = "http://www.naseem.education/";
-    public static final String URL_Base_1 = "https://naseem-prod-ibrahimbashir.c9users.io/";
+    public static final String URL_Base_1 = "http://www.naseem.education/";
+    public static final String URL_Base = "https://naseem-prod-ibrahimbashir.c9users.io/";
     public static final String URL_Login = URL_Base_1 + "api/v1/sessions";
     public static final String URL_School_Section = URL_Base_1 + "api/v1/school_section";
     public static final String URL_Sign_Up = URL_Base_1 + "api/v1/registrations";
@@ -50,6 +50,32 @@ public class Constants {
     public static final String URL_Principal_Get_Students_Test_Attempts = URL_Base_1 + "api/v1/tests/student_attempts?auth=";
     public static final String URL_Principal_Get_Students_Test_List = URL_Base_1 + "api/v1/tests/student_test_list?auth=";
     public static final String URL_Principal_Get_Teacher_Test_List = URL_Base_1 + "api/v1/tests/teacher_test_list?auth=";
+    public static final String URL_Teacher_Tests = URL_Base_1 + "api/v1/tests/getTeachersTest?auth=";
+    public static final String URL_Teacher_Groups = URL_Base_1 + "api/v1/groups/getTeachersGroup?auth=";
+    public static final String URL_Teacher_Create_Groups = URL_Base_1 + "api/v1/groups/createGroup?auth=";
+    public static final String URL_Teacher_Update_Groups = URL_Base_1 + "api/v1/groups/UpdateGroup?auth=";
+    public static final String URL_Teacher_Groups_Assign = URL_Base_1 + "api/v1/groups/assign_students?auth=";
+    public static final String URL_Teacher_Groups_Assign_Student = URL_Base_1 + "api/v1/groups/assign_student?auth=";
+    public static final String URL_Teacher_Groups_Delete = URL_Base_1 + "api/v1/groups/delete_group?auth=";
+    public static final String URL_Teacher_New_Test = URL_Base_1 + "api/v1/tests/make_test?auth=";
+    public static final String URL_Teacher_Save_Test = URL_Base_1 + "api/v1/tests/save_test?auth=";
+    public static final String URL_Teacher_Assign_Groups = URL_Base_1 + "api/v1/tests/assign_groups?auth=";
+    public static final String URL_Teacher_Assign_Group = URL_Base_1 + "api/v1/tests/assign_group?auth=";
+    public static final String URL_Teacher_Student_Attempts = URL_Base_1 + "api/v1/tests/student_attempts?auth=";
+    public static final String URL_Teacher_Single_Test = URL_Base_1 + "api/v1/tests/getSingleTest?auth=";
+    public static final String URL_TakenTest = URL_Base_1 + "api/v1/tests/getTakenTestTeacher?auth=";
+    public static final String URL_EditTest = URL_Base_1 + "api/v1/tests/getNewTestEditTeacher?auth=";
+    public static final String URL_Edit_TextQ = URL_Base_1 + "api/v1/tests/editTextQ?auth=";
+    public static final String URL_Edit_ParaQ = URL_Base_1 + "api/v1/tests/editParaQ?auth=";
+    public static final String URL_Edit_BoolQ = URL_Base_1 + "api/v1/tests/editBoolQ?auth=";
+    public static final String URL_Edit_SingleQ = URL_Base_1 + "api/v1/tests/editSingleQ?auth=";
+    public static final String URL_Edit_SingleO = URL_Base_1 + "api/v1/tests/editSingleO?auth=";
+    public static final String URL_Edit_MultiQ = URL_Base_1 + "api/v1/tests/editMultiQ?auth=";
+    public static final String URL_Edit_MultiO = URL_Base_1 + "api/v1/tests/editMultiO?auth=";
+    public static final String URL_Delete_Test = URL_Base_1 + "api/v1/tests/deleteTest?auth=";
+    public static final String URL_Submit_Student_Test = URL_Base_1 + "api/v1/tests/submitTest?auth=";
+    public static final String URL_Get_Videos = URL_Base_1 + "api/v1/videos/getVideos?auth=";
+
 
     // Keys for USER JSON Object
     public static final String User_Authenticating = "Authenticating . . .";
@@ -107,6 +133,7 @@ public class Constants {
     public static final String Key_Test_Attempt_Time = "attempt_time";
     public static final String Key_Test_Teacher_Id = "teacher_id";
     public static final String Key_Test_Teacher_Name = "t_name";
+
 
     // Keys for get Show Test
     public static final String User_Key_Test_Id = "testid";
@@ -224,5 +251,16 @@ public class Constants {
     public static final String Pink_Panther_ID_3 = "svlLdSBOz8w";
     public static final String Pink_Panther_ID_3_Desc = "The Pink Stuff | The Pink Panther (1993)";
 
+    // Key For Groups
+    public static final String Key_Group = "groups";
+    public static final String Key_Group_Id = "id";
+    public static final String Key_Group_G_Id = "group_id";
+    public static final String Key_Group_G_Id_Name = "group_name";
+    public static final String Key_Group_Name = "name";
+    public static final String Key_Group_Created = "Group Created";
+    public static final String Key_Group_Updated = "Group Updated";
+    public static final String Key_Group_NCreated = "Group Not Created due to Some Server Issue";
+    public static final String Key_Group_NUpdated = "Group Not Updated due to Some Server Issue";
+    public static final String Key_Group_Teacher_Id = "teacher_id";
 
 }

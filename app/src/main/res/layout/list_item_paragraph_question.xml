@@ -39,10 +39,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/colorText"
-        android:minLines="10"
         android:background="@drawable/edit_text_bg_1"
         android:maxLines="20"
         android:padding="@dimen/show_test_activity_edit_text_padding"
-        android:inputType="textCapSentences|textMultiLine" />
+        android:hint="Enter Answer"
+        android:inputType="textCapSentences|textMultiLine"
+        android:focusable="true"
+        android:focusableInTouchMode="true"/>
+    <android.support.v7.widget.AppCompatButton
+        android:textStyle="bold"
+        android:textSize="@dimen/show_test_activity_text_size"
+        android:layout_margin="@dimen/show_test_activity_marks_padding"
+        android:padding="@dimen/show_test_activity_edit_text_padding"
+        android:id="@+id/answer_paragraph_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorText"
+        android:background="@drawable/button_bg"
+        android:text="Answer"
+        android:inputType="textCapSentences|textMultiLine"
+        android:maxLength="2000"
+        android:maxLines="10"/>
 
 </LinearLayout>

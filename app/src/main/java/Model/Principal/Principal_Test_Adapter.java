@@ -8,14 +8,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.plan9.naseemdev.naseem.PrincipalShowScheduleTest;
-import com.plan9.naseemdev.naseem.PrincipalShowTestAttempts;
-import com.plan9.naseemdev.naseem.R;
+import edu.plan9.naseemdev.naseem.PrincipalShowScheduleTest;
+import edu.plan9.naseemdev.naseem.PrincipalShowTestAttempts;
+import edu.plan9.naseemdev.naseem.R;
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
+
 import BussinessObjects.Principal_Test_BO;
 
 /**

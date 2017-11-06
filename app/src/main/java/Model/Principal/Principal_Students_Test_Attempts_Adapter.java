@@ -1,6 +1,5 @@
 package Model.Principal;
 
-import android.app.Activity;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
@@ -10,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.plan9.naseemdev.naseem.R;
+import edu.plan9.naseemdev.naseem.R;
 import java.util.ArrayList;
 import BussinessObjects.Principal_Students_Test_Attempts_BO;
 import Model.Constants;

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_test_list_view_item_inner_background_color">
+    <CheckBox
+        android:id="@+id/option"
+        android:textStyle="bold"
+        android:textSize="@dimen/show_test_activity_text_size"
+        android:layout_margin="@dimen/show_test_activity_marks_padding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorTextBlack"
+        android:textAlignment="gravity"
+        android:gravity="left"
+        android:buttonTint="@color/color_radio_tint"
+        android:paddingTop="@dimen/show_test_activity_marks_padding"
+        android:focusable="false"
+        android:clickable="false"
+        android:enabled="false"
+        android:focusableInTouchMode="false"/>
+    <android.support.v7.widget.AppCompatButton
+        android:textStyle="bold"
+        android:textSize="@dimen/show_test_activity_text_size"
+        android:layout_margin="@dimen/show_test_activity_marks_padding"
+        android:padding="5dp"
+        android:id="@+id/edit_multi_option_question"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorText"
+        android:background="@drawable/button_bg"
+        android:text="Edit"
+        android:textAlignment="center"
+        android:inputType="textCapSentences|textMultiLine"
+        android:maxLength="2000"
+        android:maxLines="10"/>
+    <android.support.v7.widget.AppCompatButton
+        android:textStyle="bold"
+        android:textSize="@dimen/show_test_activity_text_size"
+        android:layout_margin="@dimen/show_test_activity_marks_padding"
+        android:padding="5dp"
+        android:id="@+id/remove_multi_option_question"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorText"
+        android:background="@drawable/button_danger"
+        android:text="Remove"
+        android:textAlignment="center"
+        android:inputType="textCapSentences|textMultiLine"
+        android:maxLength="2000"
+        android:maxLines="10"/>
+
+</LinearLayout>

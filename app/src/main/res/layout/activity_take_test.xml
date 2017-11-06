@@ -1,223 +1,260 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.NestedScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    tools:context="com.plan9.naseemdev.naseem.ShowTest"
-    android:background="@color/color_transparent_60_p">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
+    android:layout_height="fill_parent">
+    <android.support.v4.widget.NestedScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        tools:context="edu.plan9.naseemdev.naseem.ShowTest"
+        android:background="@color/color_transparent_60_p">
         <LinearLayout
-            android:id="@+id/reload_Test_Taken_Layout"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <ImageView
-                android:id="@+id/reload_test_taken"
-                android:layout_margin="@dimen/reload_image_margin"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/reload_image_WH"
-                android:src="@drawable/reload"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/reload_image_margin"
-                android:textAlignment="center"
-                android:gravity="center"
-                android:textSize="@dimen/reload_text_size"
-                android:textColor="@color/colorText"
-                android:textStyle="bold"
-                android:text="@string/string_reload_test_taken"/>
-        </LinearLayout>
 
-
-        <LinearLayout
-            android:layout_margin="@dimen/show_test_activity_loading_margin"
-            android:orientation="vertical"
-            android:id="@+id/load_test"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <ProgressBar
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/reload_image_margin"
-                android:textAlignment="center"
-                android:gravity="center"
-                android:textSize="@dimen/reload_text_size"
-                android:textColor="@color/colorText"
-                android:textStyle="bold"
-                android:text="@string/string_loading_test"/>
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/label_text_questions"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/colorText"
-            android:textStyle="bold"
-            android:textSize="@dimen/show_test_activity_label_text_size"
-            android:layout_margin="@dimen/show_test_activity_label_margin"
-            android:text="@string/string_text_questions"
-            android:textAlignment="gravity"
-            android:gravity="center"/>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/list_text_questions"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:nestedScrollingEnabled="false"/>
-        </RelativeLayout>
-        <View
-            android:id="@+id/line_text_question"
-            android:layout_marginTop="@dimen/show_test_activity_horizontal_line_margin"
-            android:layout_marginBottom="@dimen/show_test_activity_horizontal_line_margin"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/show_test_activity_horizontal_line_height"
-            android:background="@android:color/darker_gray"/>
-
-        <TextView
-            android:id="@+id/label_single_choice_questions"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/colorText"
-            android:textStyle="bold"
-            android:textSize="@dimen/show_test_activity_label_text_size"
-            android:layout_margin="@dimen/show_test_activity_label_margin"
-            android:text="@string/string_single_choice_questions"
-            android:textAlignment="gravity"
-            android:gravity="center"/>
-        <ExpandableListView
-            android:id="@+id/list_single_choice_questions"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:dividerHeight="5dp"
-            android:divider="@color/color_test_list_view_item_background_color"
-            android:childDivider="@color/color_test_list_view_item_inner_background_color"/>
-        <View
-            android:id="@+id/line_single_choice_question"
-            android:layout_marginTop="@dimen/show_test_activity_horizontal_line_margin"
-            android:layout_marginBottom="@dimen/show_test_activity_horizontal_line_margin"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/show_test_activity_horizontal_line_height"
-            android:background="@android:color/darker_gray" />
-
-
-
-        <TextView
-            android:id="@+id/label_multi_choice_questions"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/colorText"
-            android:textStyle="bold"
-            android:textSize="@dimen/show_test_activity_label_text_size"
-            android:layout_margin="@dimen/show_test_activity_label_margin"
-            android:text="@string/string_multi_choice_questions"
-            android:textAlignment="gravity"
-            android:gravity="center"/>
-        <ExpandableListView
-            android:id="@+id/list_multi_choice_questions"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:dividerHeight="5dp"
-            android:divider="@color/color_test_list_view_item_background_color"
-            android:childDivider="@color/color_test_list_view_item_inner_background_color"/>
-        <View
-            android:id="@+id/line_multi_choice_question"
-            android:layout_marginTop="@dimen/show_test_activity_horizontal_line_margin"
-            android:layout_marginBottom="@dimen/show_test_activity_horizontal_line_margin"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/show_test_activity_horizontal_line_height"
-            android:background="@android:color/darker_gray"/>
-
-
-
-        <TextView
-            android:id="@+id/label_paragraph_questions"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/colorText"
-            android:textStyle="bold"
-            android:textSize="@dimen/show_test_activity_label_text_size"
-            android:layout_margin="@dimen/show_test_activity_label_margin"
-            android:text="@string/string_paragraph_questions"
-            android:textAlignment="gravity"
-            android:gravity="center"/>
-        <ListView
-            android:id="@+id/list_paragraph_questions"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:dividerHeight="@dimen/show_test_activity_divider_height">
-        </ListView>
-        <View
-            android:id="@+id/line_paragraph_question"
-            android:layout_marginTop="@dimen/show_test_activity_horizontal_line_margin"
-            android:layout_marginBottom="@dimen/show_test_activity_horizontal_line_margin"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/show_test_activity_horizontal_line_height"
-            android:background="@android:color/darker_gray"/>
-
-        <TextView
-            android:id="@+id/label_boolean_questions"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/colorText"
-            android:textStyle="bold"
-            android:textSize="@dimen/show_test_activity_label_text_size"
-            android:layout_margin="@dimen/show_test_activity_label_margin"
-            android:text="@string/string_boolean_questions"
-            android:textAlignment="gravity"
-            android:gravity="center"/>
-        <ListView
-            android:id="@+id/list_boolean_questions"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:dividerHeight="@dimen/show_test_activity_divider_height"/>
-        <View
-            android:id="@+id/line_boolean_question"
-            android:layout_marginTop="@dimen/show_test_activity_horizontal_line_margin"
-            android:layout_marginBottom="@dimen/show_test_activity_horizontal_line_margin"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/show_test_activity_horizontal_line_height"
-            android:background="@android:color/darker_gray"/>
-
-        <RelativeLayout
-            android:layout_margin="@dimen/show_test_activity_student_marks_margin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_alignParentLeft="true"
-                android:id="@+id/obtained_marks"
+            <LinearLayout
+                android:id="@+id/reload_Test_Taken_Layout"
+                android:layout_gravity="center"
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <ImageView
+                    android:id="@+id/reload_test_taken"
+                    android:layout_margin="@dimen/reload_image_margin"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/reload_image_WH"
+                    android:src="@drawable/reload"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/reload_image_margin"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:textSize="@dimen/reload_text_size"
+                    android:textColor="@color/colorText"
+                    android:textStyle="bold"
+                    android:text="@string/string_reload_test_taken"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_margin="@dimen/show_test_activity_loading_margin"
+                android:orientation="vertical"
+                android:id="@+id/load_test"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ProgressBar
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/reload_image_margin"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:textSize="@dimen/reload_text_size"
+                    android:textColor="@color/colorText"
+                    android:textStyle="bold"
+                    android:text="@string/string_loading_test"/>
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/label_text_questions"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorText"
                 android:textStyle="bold"
                 android:textSize="@dimen/show_test_activity_label_text_size"
-                android:layout_margin="@dimen/show_test_activity_student_marks_margin"
+                android:layout_margin="@dimen/show_test_activity_label_margin"
+                android:text="@string/string_text_questions"
                 android:textAlignment="gravity"
-                android:gravity="left" />
+                android:gravity="center"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ListView
+                    android:id="@+id/list_text_questions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:dividerHeight="@dimen/show_test_activity_divider_height"/>
+            </RelativeLayout>
+            <View
+                android:id="@+id/line_text_question"
+                android:layout_marginTop="@dimen/show_test_activity_horizontal_line_margin"
+                android:layout_marginBottom="@dimen/show_test_activity_horizontal_line_margin"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/show_test_activity_horizontal_line_height"
+                android:background="@android:color/darker_gray"/>
+
             <TextView
-                android:layout_alignParentRight="true"
-                android:id="@+id/total_marks"
-                android:layout_width="wrap_content"
+                android:id="@+id/label_single_choice_questions"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorText"
                 android:textStyle="bold"
                 android:textSize="@dimen/show_test_activity_label_text_size"
-                android:layout_margin="@dimen/show_test_activity_student_marks_margin"
+                android:layout_margin="@dimen/show_test_activity_label_margin"
+                android:text="@string/string_single_choice_questions"
                 android:textAlignment="gravity"
-                android:gravity="right"/>
-        </RelativeLayout>
-    </LinearLayout>
+                android:gravity="center"/>
+            <ExpandableListView
+                android:id="@+id/list_single_choice_questions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:dividerHeight="5dp"
+                android:divider="@color/color_test_list_view_item_background_color"
+                android:childDivider="@color/color_test_list_view_item_inner_background_color"/>
+            <View
+                android:id="@+id/line_single_choice_question"
+                android:layout_marginTop="@dimen/show_test_activity_horizontal_line_margin"
+                android:layout_marginBottom="@dimen/show_test_activity_horizontal_line_margin"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/show_test_activity_horizontal_line_height"
+                android:background="@android:color/darker_gray" />
 
-</android.support.v4.widget.NestedScrollView>
+
+
+            <TextView
+                android:id="@+id/label_multi_choice_questions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorText"
+                android:textStyle="bold"
+                android:textSize="@dimen/show_test_activity_label_text_size"
+                android:layout_margin="@dimen/show_test_activity_label_margin"
+                android:text="@string/string_multi_choice_questions"
+                android:textAlignment="gravity"
+                android:gravity="center"/>
+            <ExpandableListView
+                android:id="@+id/list_multi_choice_questions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:dividerHeight="5dp"
+                android:divider="@color/color_test_list_view_item_background_color"
+                android:childDivider="@color/color_test_list_view_item_inner_background_color"/>
+            <View
+                android:id="@+id/line_multi_choice_question"
+                android:layout_marginTop="@dimen/show_test_activity_horizontal_line_margin"
+                android:layout_marginBottom="@dimen/show_test_activity_horizontal_line_margin"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/show_test_activity_horizontal_line_height"
+                android:background="@android:color/darker_gray"/>
+
+
+
+            <TextView
+                android:id="@+id/label_paragraph_questions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorText"
+                android:textStyle="bold"
+                android:textSize="@dimen/show_test_activity_label_text_size"
+                android:layout_margin="@dimen/show_test_activity_label_margin"
+                android:text="@string/string_paragraph_questions"
+                android:textAlignment="gravity"
+                android:gravity="center"/>
+            <ListView
+                android:id="@+id/list_paragraph_questions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:dividerHeight="@dimen/show_test_activity_divider_height">
+            </ListView>
+            <View
+                android:id="@+id/line_paragraph_question"
+                android:layout_marginTop="@dimen/show_test_activity_horizontal_line_margin"
+                android:layout_marginBottom="@dimen/show_test_activity_horizontal_line_margin"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/show_test_activity_horizontal_line_height"
+                android:background="@android:color/darker_gray"/>
+
+            <TextView
+                android:id="@+id/label_boolean_questions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorText"
+                android:textStyle="bold"
+                android:textSize="@dimen/show_test_activity_label_text_size"
+                android:layout_margin="@dimen/show_test_activity_label_margin"
+                android:text="@string/string_boolean_questions"
+                android:textAlignment="gravity"
+                android:gravity="center"/>
+            <ListView
+                android:id="@+id/list_boolean_questions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:dividerHeight="@dimen/show_test_activity_divider_height"/>
+            <View
+                android:id="@+id/line_boolean_question"
+                android:layout_marginTop="@dimen/show_test_activity_horizontal_line_margin"
+                android:layout_marginBottom="@dimen/show_test_activity_horizontal_line_margin"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/show_test_activity_horizontal_line_height"
+                android:background="@android:color/darker_gray"/>
+            <TextView
+                android:id="@+id/label_image_questions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorText"
+                android:textStyle="bold"
+                android:textSize="@dimen/show_test_activity_label_text_size"
+                android:layout_margin="@dimen/show_test_activity_label_margin"
+                android:text="Image Questions"
+                android:textAlignment="gravity"
+                android:gravity="center"/>
+            <ListView
+                android:id="@+id/list_image_questions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:dividerHeight="@dimen/show_test_activity_divider_height"/>
+            <View
+                android:id="@+id/line_image_question"
+                android:layout_marginTop="@dimen/show_test_activity_horizontal_line_margin"
+                android:layout_marginBottom="@dimen/show_test_activity_horizontal_line_margin"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/show_test_activity_horizontal_line_height"
+                android:background="@android:color/darker_gray"/>
+
+            <RelativeLayout
+                android:layout_margin="@dimen/show_test_activity_student_marks_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_alignParentLeft="true"
+                    android:id="@+id/obtained_marks"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorText"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/show_test_activity_label_text_size"
+                    android:layout_margin="@dimen/show_test_activity_student_marks_margin"
+                    android:textAlignment="gravity"
+                    android:gravity="left" />
+                <TextView
+                    android:layout_alignParentRight="true"
+                    android:id="@+id/total_marks"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorText"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/show_test_activity_label_text_size"
+                    android:layout_margin="@dimen/show_test_activity_student_marks_margin"
+                    android:textAlignment="gravity"
+                    android:gravity="right"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+    <Button
+        android:id="@+id/btn_submit_test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/user_button_bg_1"
+        android:text="Submit"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>

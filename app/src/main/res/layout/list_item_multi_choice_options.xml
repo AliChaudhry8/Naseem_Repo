@@ -15,4 +15,5 @@
         android:gravity="left"
         android:buttonTint="@color/color_radio_tint"
         android:paddingTop="5dp"/>
+
 </LinearLayout>

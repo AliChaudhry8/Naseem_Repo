@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:background="@color/color_test_list_view_item_background_color">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <TextView
+                android:textStyle="bold"
+                android:textSize="@dimen/show_test_activity_text_size"
+                android:layout_margin="@dimen/show_test_activity_marks_padding"
+                android:id="@+id/first_name_title"
+                android:text="First Name: "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorText"/>
+            <TextView
+                android:textStyle="bold"
+                android:textSize="@dimen/show_test_activity_text_size"
+                android:layout_margin="@dimen/show_test_activity_marks_padding"
+                android:id="@+id/second_name_title"
+                android:layout_below="@id/first_name_title"
+                android:text="Second Name: "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorText"/>
+            <TextView
+                android:textStyle="bold"
+                android:textSize="@dimen/show_test_activity_text_size"
+                android:layout_margin="@dimen/show_test_activity_marks_padding"
+                android:id="@+id/user_name_title"
+                android:layout_below="@id/second_name_title"
+                android:text="User Name: "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorText"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="7">
+            <TextView
+                android:textStyle="bold"
+                android:textSize="@dimen/show_test_activity_text_size"
+                android:layout_margin="@dimen/show_test_activity_marks_padding"
+                android:id="@+id/first_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorText"/>
+            <TextView
+                android:textStyle="bold"
+                android:textSize="@dimen/show_test_activity_text_size"
+                android:layout_margin="@dimen/show_test_activity_marks_padding"
+                android:id="@+id/second_name"
+                android:layout_below="@id/first_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorText"/>
+            <TextView
+                android:textStyle="bold"
+                android:textSize="@dimen/show_test_activity_text_size"
+                android:layout_margin="@dimen/show_test_activity_marks_padding"
+                android:id="@+id/user_name"
+                android:layout_below="@id/second_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorText"/>
+        </RelativeLayout>
+        <CheckBox
+            android:id="@+id/rd_btn_assign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="2"
+            android:textColor="#000" />
+    </LinearLayout>
+
+</LinearLayout>

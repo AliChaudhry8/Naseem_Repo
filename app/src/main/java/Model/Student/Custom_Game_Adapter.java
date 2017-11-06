@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.plan9.naseemdev.naseem.R;
+import edu.plan9.naseemdev.naseem.R;
 
 import java.util.ArrayList;
 

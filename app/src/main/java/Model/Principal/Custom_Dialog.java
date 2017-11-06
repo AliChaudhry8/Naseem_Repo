@@ -8,11 +8,10 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.plan9.naseemdev.naseem.R;
-import com.plan9.naseemdev.naseem.Student_Teacher_Profile;
-import com.plan9.naseemdev.naseem.TeacherStudentTestList;
+import edu.plan9.naseemdev.naseem.R;
+import edu.plan9.naseemdev.naseem.Student_Teacher_Profile;
+import edu.plan9.naseemdev.naseem.TeacherStudentTestList;
 
 import BussinessObjects.User_BO;
 

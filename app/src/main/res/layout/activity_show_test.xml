@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    tools:context="com.plan9.naseemdev.naseem.ShowTest"
+    tools:context="edu.plan9.naseemdev.naseem.ShowTest"
     android:background="@color/color_transparent_60_p">
     <LinearLayout
         android:layout_width="match_parent"
@@ -184,6 +184,29 @@
             android:dividerHeight="@dimen/show_test_activity_divider_height"/>
         <View
             android:id="@+id/line_boolean_question"
+            android:layout_marginTop="@dimen/show_test_activity_horizontal_line_margin"
+            android:layout_marginBottom="@dimen/show_test_activity_horizontal_line_margin"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/show_test_activity_horizontal_line_height"
+            android:background="@android:color/darker_gray"/>
+        <TextView
+            android:id="@+id/label_image_questions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorText"
+            android:textStyle="bold"
+            android:textSize="@dimen/show_test_activity_label_text_size"
+            android:layout_margin="@dimen/show_test_activity_label_margin"
+            android:text="Image Questions"
+            android:textAlignment="gravity"
+            android:gravity="center"/>
+        <ListView
+            android:id="@+id/list_image_questions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:dividerHeight="@dimen/show_test_activity_divider_height"/>
+        <View
+            android:id="@+id/line_image_question"
             android:layout_marginTop="@dimen/show_test_activity_horizontal_line_margin"
             android:layout_marginBottom="@dimen/show_test_activity_horizontal_line_margin"
             android:layout_width="match_parent"

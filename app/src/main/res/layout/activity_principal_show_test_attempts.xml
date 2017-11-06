@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.plan9.naseemdev.naseem.PrincipalShowTestAttempts"
+    tools:context="edu.plan9.naseemdev.naseem.PrincipalShowTestAttempts"
     android:background="@drawable/b3">
     <TextView
         android:id="@+id/listing_students"
