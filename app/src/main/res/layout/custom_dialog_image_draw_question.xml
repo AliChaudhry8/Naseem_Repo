@@ -42,18 +42,18 @@
             android:layout_gravity="center_horizontal" />
 
         <Button
-            android:id="@+id/draw"
+            android:id="@+id/redo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/canvas"
-            android:text="Draw"
+            android:text="Redo"
             />
         <Button
             android:id="@+id/erase"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/draw"
-            android:text="Erase"
+            android:text="Undo"
             />
 
 

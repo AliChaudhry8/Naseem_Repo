@@ -789,6 +789,7 @@ public class JsonParsor {
                 for (int j=0; j<options.length(); j++){
                     Single_Choice_Options sco = new Single_Choice_Options();
                     JSONObject O = options.getJSONObject(j);
+                    sco.setId(O.getInt("id"));
                     sco.setOption(O.getString(Constants.Test_Key_Single_Choice_Options_Optioon));
                     single_choice_options.add(sco);
                 }
@@ -809,6 +810,7 @@ public class JsonParsor {
                 for(int j=0; j<json_options.length(); j++){
                     JSONObject jss = json_options.getJSONObject(j);
                     Multi_Choice_Options option = new Multi_Choice_Options();
+                    option.setId(jss.getInt("id"));
                     option.setOption(jss.getString(Constants.Test_Key_Multi_Choice_Options_Option));
                     multi_choice_options.add(option);
                 }

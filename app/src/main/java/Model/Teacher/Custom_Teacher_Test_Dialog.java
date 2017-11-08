@@ -38,6 +38,7 @@ import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Element;
 import com.itextpdf.text.Font;
 import com.itextpdf.text.Image;
+import com.itextpdf.text.PageSize;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.Phrase;
 import com.itextpdf.text.pdf.PdfPCell;
@@ -80,6 +81,7 @@ public class Custom_Teacher_Test_Dialog extends Dialog implements View.OnClickLi
     private Button edit, pdf,assign , st_Attempts , delete, cancel;
     private Test_BO tests;
     private TextView name;
+    private static int counter = 1;
     Session session;
     ProgressDialog progressDialog;
     PdfPTable table;
@@ -310,86 +312,41 @@ public class Custom_Teacher_Test_Dialog extends Dialog implements View.OnClickLi
 
             if(complete_test_bo.getImagesQuestions().size() != 0) {
                 document.add(new Paragraph(Chunk.NEWLINE));
-                Chunk tf = new Chunk("Image Questions" , font1);
+                Chunk tf = new Chunk("Image Questions", font1);
                 paragraph = new Paragraph();
                 paragraph.add(tf);
                 paragraph.setFont(font1);
                 paragraph.setAlignment(Element.ALIGN_CENTER);
                 document.add(paragraph);
                 document.add(new Paragraph(Chunk.NEWLINE));
-                for (int i = 0; i < complete_test_bo.getImagesQuestions().size(); i++) {
-
-                    final int j = i;
-                    credentialsProvider();
-                    transferUtility = new TransferUtility(s3Client, activity.getApplicationContext());
-                    File file;
-                    file = new File(Environment.getExternalStorageDirectory().toString() + "/" + complete_test_bo.getImagesQuestions().get(i).getImageKey());
-                    complete_test_bo.getImagesQuestions().get(i).setImage(file);
-                    TransferObserver observer = transferUtility.download(
-                                "naseemedu",     /* The bucket to upload to */
-                                complete_test_bo.getImagesQuestions().get(i).getImageKey(),    /* The key for the uploaded object */
-                                complete_test_bo.getImagesQuestions().get(i).getImage()       /* The file where the data to upload exists */
-                    );
-                        //test_object.getImagesQuestions().get(i).setImage(file);
-                    observer.setTransferListener(new TransferListener() {
-                        @Override
-                        public void onStateChanged(int id, TransferState state) {
-                            if(state.toString() == "COMPLETED"){
-                                //Toast.makeText(getApplicationContext() , "Successed" , Toast.LENGTH_LONG).show();
-                                //getShowTest();
-                                //save_test(j);
-                                try {
-                                    table = new PdfPTable(2);
-                                    table.setWidthPercentage(100);
-                                    table.addCell(getCell("Q" + (j + 1) + ": " + complete_test_bo.getImagesQuestions().get(j).getTitle(), PdfPCell.ALIGN_LEFT, 0));
-                                    table.addCell(getCell(String.valueOf("(" + complete_test_bo.getImagesQuestions().get(j).getMarks() + ")"), PdfPCell.ALIGN_RIGHT, 0));
-                                    document.add(table);
-                                    document.add(new Paragraph(Chunk.NEWLINE));
-
-                                    Bitmap bitmap = BitmapFactory.decodeFile(complete_test_bo.getImagesQuestions().get(j).getImage().getPath());
-                                    ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                                    bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-
-                                    Image image = Image.getInstance(stream.toByteArray());
-                                    document.add(image);
-                                }catch (IOException e){
+                for(int j = 0 ; j < complete_test_bo.getImagesQuestions().size() ; j++) {
+                    try {
+                        table = new PdfPTable(2);
+                        table.setWidthPercentage(100);
+                        table.addCell(getCell("Q" + (j + 1) + ": " + complete_test_bo.getImagesQuestions().get(j).getTitle(), PdfPCell.ALIGN_LEFT, 0));
+                        table.addCell(getCell(String.valueOf("(" + complete_test_bo.getImagesQuestions().get(j).getMarks() + ")"), PdfPCell.ALIGN_RIGHT, 0));
 
 
-                                }catch (DocumentException e){
-
-                                }
-
-                            }
-                        }
-
-                            @Override
-                            public void onProgressChanged(int id, long bytesCurrent, long bytesTotal) {
-
-                            }
-
-                            @Override
-                            public void onError(int id, Exception ex) {
-
-                            }
-                        });
-                 /*  try {
-                        String fileName = "newfile";
-
-                        File file = File.createTempFile(fileName, null, activity.getCacheDir());
-                       //FileOutputStream fileOutputStream = new FileOutputStream(complete_test_bo.getImagesQuestions().get(i).getImage());
-
-                        copy(complete_test_bo.getImagesQuestions().get(i).getImage() , file);
-                    Bitmap bitmap = BitmapFactory.decodeFile(file.getPath());
-                    ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                    bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                        Bitmap bitmap = BitmapFactory.decodeFile(complete_test_bo.getImagesQuestions().get(j).getImage().getPath());
+                        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
 
                         Image image = Image.getInstance(stream.toByteArray());
-                        document.add(image);
-                    }catch (IOException e){
+                        image.scaleToFit(300f, 300f);
 
-                    }*/
+                        document.add(table);
+                        document.add(new Paragraph(Chunk.NEWLINE));
+                        document.add(image);
+                    } catch (IOException e) {
+
+
+                    } catch (DocumentException e) {
+
+                    }
                 }
             }
+
+
             //Step 5: Close the document
             document.close();
             progressDialog.dismiss();
@@ -433,14 +390,56 @@ public class Custom_Teacher_Test_Dialog extends Dialog implements View.OnClickLi
                                 return;
                             }
                             JsonParsor js = new JsonParsor();
-                            Complete_Test_BO test_object = js.parseShow_Test(s.toString());
-                            if(test_object != null) {
-                                try{
-                                    createPdf(test_object);
-                                }catch (FileNotFoundException e){
-                                    progressDialog.dismiss();
-                                    Toast.makeText(activity.getApplicationContext() , ""+e.toString() , Toast.LENGTH_LONG).show();
+                            final Complete_Test_BO test_object = js.parseShow_Test(s.toString());
+                            if(test_object.getImagesQuestions().size() > 0) {
+                                credentialsProvider();
+                                transferUtility = new TransferUtility(s3Client, activity.getApplicationContext());
+                                File file;
+                                for (int i = 0; i < test_object.getImagesQuestions().size(); i++) {
+                                    file = new File(Environment.getExternalStorageDirectory().toString() + "/" + test_object.getImagesQuestions().get(i).getImageKey());
+                                    test_object.getImagesQuestions().get(i).setImage(file);
+                                    TransferObserver observer = transferUtility.download(
+                                            "naseemedu/uploads",     /* The bucket to upload to */
+                                            test_object.getImagesQuestions().get(i).getImageKey(),    /* The key for the uploaded object */
+                                            test_object.getImagesQuestions().get(i).getImage()       /* The file where the data to upload exists */
+                                    );
+                                    //test_object.getImagesQuestions().get(i).setImage(file);
+                                    observer.setTransferListener(new TransferListener() {
+                                        @Override
+                                        public void onStateChanged(int id, TransferState state) {
+                                            if (state.toString() == "COMPLETED") {
+                                                if(counter == test_object.getImagesQuestions().size() ){
+                                                    try{
+                                                        createPdf(test_object);
+                                                        counter = 1;
+                                                    }catch (FileNotFoundException e){
+                                                        progressDialog.dismiss();
+                                                        Toast.makeText(activity.getApplicationContext() , ""+e.toString() , Toast.LENGTH_LONG).show();
+                                                    }catch (DocumentException e1){
+                                                        e1.toString();
+                                                    }
+                                                }
+                                                if(counter < test_object.getImagesQuestions().size()){
+                                                    counter++;
+                                                }
+                                            }
+                                        }
+
+                                        @Override
+                                        public void onProgressChanged(int id, long bytesCurrent, long bytesTotal) {
+
+                                        }
+
+                                        @Override
+                                        public void onError(int id, Exception ex) {
+
+                                        }
+                                    });
+                                    //transferObserverListener(observer);
                                 }
+                            }
+                            else if(test_object.getImagesQuestions().size() == 0){
+                                createPdf(test_object);
                             }
                             else{
                                 hide();

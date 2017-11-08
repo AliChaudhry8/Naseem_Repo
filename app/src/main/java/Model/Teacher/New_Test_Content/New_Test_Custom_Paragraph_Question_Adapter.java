@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import Model.Check_MetaData_Event;
 import Model.Paragraph_Question_Event;
 import edu.plan9.naseemdev.naseem.New_Test;
 import edu.plan9.naseemdev.naseem.R;
@@ -152,7 +153,8 @@ public class New_Test_Custom_Paragraph_Question_Adapter extends ArrayAdapter<Par
                 public void onClick(View v1) {
                     if(v.metadata.getText().toString().equals("Show MetaData")){
                         paragraphQuestions.get(position).setCheckMeta(1);
-                        EventBus.getDefault().post(paragraphQuestions);
+                        Check_MetaData_Event event = new Check_MetaData_Event();
+                        EventBus.getDefault().post(event);
                     }
                     else if(v.metadata.getText().toString().equals("Hide MetaData")){
                         paragraphQuestions.get(position).setCheckMeta(0);

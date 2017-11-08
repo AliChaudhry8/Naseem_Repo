@@ -27,11 +27,12 @@
             android:text="@string/string_reload_cartoons"/>
     </LinearLayout>
 
-    <ListView
-        android:id="@+id/videos_thumb"
+    <com.srx.widget.PullToLoadView
+        android:id="@+id/pull_to_load_videos"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </ListView>
+        android:layout_height="match_parent"
+        android:layout_below="@id/save_students"/>
+
     <RelativeLayout
         android:background="@color/color_transparent_80_p"
         android:layout_centerInParent="true"

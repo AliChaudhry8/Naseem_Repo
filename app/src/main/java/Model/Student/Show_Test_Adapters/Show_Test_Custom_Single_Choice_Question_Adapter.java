@@ -96,7 +96,7 @@ public class Show_Test_Custom_Single_Choice_Question_Adapter extends BaseExpanda
             if(sco.get(j).getCorrect())
                 answer.setText("Correct: " + sco.get(j).getOption());
 
-            if(sco.get(j).getCorrect() && answer_id == sco.get(j).getId()){
+            if(answer_id == sco.get(j).getId()){
                 marks.setText(scq.getMarks()+"/"+scq.getMarks());
                 m.setObtained(scq.getMarks());
                 flag = true;

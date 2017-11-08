@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import Model.Check_MetaData_Event;
 import edu.plan9.naseemdev.naseem.New_Test;
 import edu.plan9.naseemdev.naseem.R;
 
@@ -153,11 +154,13 @@ public class New_Test_Custom_Single_Choice_Question_Adapter extends BaseExpandab
             public void onClick(View v1) {
                 if(metadata.getText().toString().equals("Show MetaData")){
                     singleChoiceQuestions.get(i).setCheckMeta(1);
-                    EventBus.getDefault().post(singleChoiceQuestions);
+                    Check_MetaData_Event event = new Check_MetaData_Event();
+                    EventBus.getDefault().post(event);
                 }
                 else if(metadata.getText().toString().equals("Hide MetaData")){
                     singleChoiceQuestions.get(i).setCheckMeta(0);
-                    EventBus.getDefault().post(singleChoiceQuestions);
+                    Check_MetaData_Event event = new Check_MetaData_Event();
+                    EventBus.getDefault().post(event);
                 }
             }
         });

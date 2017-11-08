@@ -69,7 +69,7 @@ public class Custom_Dialog_Image_Draw_Question extends Dialog implements View.On
     int position;
 
     CanvasView canvasView = null;
-    Button draw  , erase;
+    Button redo  , erase;
 
     public Custom_Dialog_Image_Draw_Question(Activity a , Image_Questions image , ArrayList<Image_Questions> images  , int position) {
         super(a);
@@ -94,7 +94,7 @@ public class Custom_Dialog_Image_Draw_Question extends Dialog implements View.On
         cancel.setOnClickListener(this);
 
         canvasView = (CanvasView)this.findViewById(R.id.canvas);
-        draw = (Button)findViewById(R.id.draw);
+        redo = (Button)findViewById(R.id.redo);
         erase = (Button)findViewById(R.id.erase);
 
         canvasView.setBaseColor(0xFF000000);
@@ -107,27 +107,16 @@ public class Custom_Dialog_Image_Draw_Question extends Dialog implements View.On
         canvasView.setPaintStrokeWidth(5F);
 
 
-        draw.setOnClickListener(new View.OnClickListener() {
+        redo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //canvasView.drawBitmap(icon);
-                canvasView.setBaseColor(Color.RED);
-                canvasView.drawBitmap(icon);
-                canvasView.setPaintStrokeColor(Color.RED);
-                canvasView.setPaintStrokeWidth(5F);
-                canvasView.setMode(CanvasView.Mode.DRAW);
-                canvasView.setDrawer(CanvasView.Drawer.PEN);
+                canvasView.redo();
             }
         });
         erase.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                canvasView.setMode(CanvasView.Mode.ERASER);
-                canvasView.clear(copyicon);
-                canvasView.setPaintStrokeColor(Color.RED);
-                canvasView.setPaintStrokeWidth(5F);
-
-                //canvasView.drawBitmap(copyicon);
+                canvasView.undo();
             }
         });
         this.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));

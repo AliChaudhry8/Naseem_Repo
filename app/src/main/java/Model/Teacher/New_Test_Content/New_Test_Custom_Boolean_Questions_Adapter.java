@@ -11,6 +11,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import Model.Check_MetaData_Event;
 import edu.plan9.naseemdev.naseem.New_Test;
 import edu.plan9.naseemdev.naseem.R;
 
@@ -165,7 +166,8 @@ public class New_Test_Custom_Boolean_Questions_Adapter extends ArrayAdapter<Bool
                 public void onClick(View v1) {
                     if(v.metadata.getText().toString().equals("Show MetaData")){
                         booleanQuestions.get(position).setCheckMeta(1);
-                        EventBus.getDefault().post(booleanQuestions);
+                        Check_MetaData_Event event = new Check_MetaData_Event();
+                        EventBus.getDefault().post(event);
                     }
                     else if(v.metadata.getText().toString().equals("Hide MetaData")){
                         booleanQuestions.get(position).setCheckMeta(0);

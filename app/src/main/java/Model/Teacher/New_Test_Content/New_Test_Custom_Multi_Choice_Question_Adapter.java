@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import Model.Check_MetaData_Event;
 import edu.plan9.naseemdev.naseem.New_Test;
 import edu.plan9.naseemdev.naseem.R;
 
@@ -178,11 +179,13 @@ public class New_Test_Custom_Multi_Choice_Question_Adapter extends BaseExpandabl
             public void onClick(View v1) {
                 if(metadata.getText().toString().equals("Show MetaData")){
                     multipleChoiceQuestions.get(i).setCheckMeta(1);
-                    EventBus.getDefault().post(multipleChoiceQuestions);
+                    Check_MetaData_Event event = new Check_MetaData_Event();
+                    EventBus.getDefault().post(event);
                 }
                 else if(metadata.getText().toString().equals("Hide MetaData")){
                     multipleChoiceQuestions.get(i).setCheckMeta(0);
-                    EventBus.getDefault().post(multipleChoiceQuestions);
+                    Check_MetaData_Event event = new Check_MetaData_Event();
+                    EventBus.getDefault().post(event);
                 }
             }
         });

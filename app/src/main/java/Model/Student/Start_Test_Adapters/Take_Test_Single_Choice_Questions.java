@@ -102,13 +102,13 @@ public class Take_Test_Single_Choice_Questions extends BaseExpandableListAdapter
                     if(j >= 0){
                         singleChoiceQuestions.get(i).getOptions().get(j).setChecked(false);
                         singleChoiceQuestions.get(i).setOptionselected(i1);
-                        singleChoiceQuestions.get(i).setStd_answer(i1);
+                        singleChoiceQuestions.get(i).setStd_answer(sco.getId());
                         sco.setChecked(true);
                         notifyDataSetChanged();
                     }
                     else{
                         singleChoiceQuestions.get(i).setOptionselected(i1);
-                        singleChoiceQuestions.get(i).setStd_answer(i1);
+                        singleChoiceQuestions.get(i).setStd_answer(sco.getId());
                         sco.setChecked(true);
                         notifyDataSetChanged();
                     }
@@ -126,7 +126,7 @@ public class Take_Test_Single_Choice_Questions extends BaseExpandableListAdapter
                         if (j >= 0) {
                             singleChoiceQuestions.get(i).getOptions().get(j).setChecked(false);
                             singleChoiceQuestions.get(i).setOptionselected(i1);
-                            singleChoiceQuestions.get(i).setStd_answer(i1);
+                            singleChoiceQuestions.get(i).setStd_answer(sco.getId());
                             sco.setChecked(true);
                             notifyDataSetChanged();
                         } else {

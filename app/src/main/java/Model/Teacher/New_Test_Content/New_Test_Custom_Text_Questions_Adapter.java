@@ -164,12 +164,18 @@ public class New_Test_Custom_Text_Questions_Adapter extends ArrayAdapter<Text_Qu
                 @Override
                 public void onClick(View v1) {
                     if(v.metadata.getText().toString().equals("Show MetaData")){
+                        v.metadata.setText("Hide MetaData");
                         text_questions.get(position).setCheckMeta(1);
-                        EventBus.getDefault().post(text_questions);
+                        notifyDataSetChanged();
+                        Check_MetaData_Event event = new Check_MetaData_Event();
+                        EventBus.getDefault().post(event);
                     }
                     else if(v.metadata.getText().toString().equals("Hide MetaData")){
+                        v.metadata.setText("Show MetaData");
                         text_questions.get(position).setCheckMeta(0);
-                        EventBus.getDefault().post(text_questions);
+                        notifyDataSetChanged();
+                        Check_MetaData_Event event = new Check_MetaData_Event();
+                        EventBus.getDefault().post(event);
                     }
                 }
             });
