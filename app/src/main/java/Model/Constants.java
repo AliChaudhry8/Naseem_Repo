@@ -32,8 +32,8 @@ public class Constants {
 
 
     // URL's Strings
-    public static final String URL_Base = "http://www.naseem.education/";
-    public static final String URL_Base_1 = "https://naseem-prod-ibrahimbashir.c9users.io/";
+    public static final String URL_Base_1 = "http://www.naseem.education/";
+    public static final String URL_Base = "https://naseem-prod-ibrahimbashir.c9users.io/";
     public static final String URL_Login = URL_Base_1 + "api/v1/sessions";
     public static final String URL_School_Section = URL_Base_1 + "api/v1/school_section";
     public static final String URL_Sign_Up = URL_Base_1 + "api/v1/registrations";

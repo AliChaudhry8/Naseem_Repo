@@ -8,6 +8,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
@@ -58,6 +59,9 @@ import com.google.android.youtube.player.YouTubePlayer;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import Model.Constants;
 import Model.Session;
@@ -65,7 +69,7 @@ import Model.Session;
 import static android.view.View.GONE;
 
 public class Student extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
-    private Button gameButton, videosButton, testButton;
+    private Button tutorialsButton, videosButton, testButton , talk_to_naseem;
     private NavigationView header;
     private View view;
     private ImageView profile_pic;
@@ -105,19 +109,19 @@ public class Student extends AppCompatActivity implements NavigationView.OnNavig
             public void onPageSelected(int position) {
                 switch (position){
                     case 0:{
-                        gameButton.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.user_button_bg_2));
+                        tutorialsButton.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.user_button_bg_2));
                         videosButton.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.user_button_bg_1));
                         testButton.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.user_button_bg_1));
                         break;
                     }
                     case 1:{
-                        gameButton.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.user_button_bg_1));
+                        tutorialsButton.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.user_button_bg_1));
                         videosButton.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.user_button_bg_2));
                         testButton.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.user_button_bg_1));
                         break;
                     }
                     case 2:{
-                        gameButton.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.user_button_bg_1));
+                        tutorialsButton.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.user_button_bg_1));
                         videosButton.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.user_button_bg_1));
                         testButton.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.user_button_bg_2));
                         break;
@@ -128,19 +132,22 @@ public class Student extends AppCompatActivity implements NavigationView.OnNavig
             public void onPageScrollStateChanged(int state) {}
         });
         session = new Session(getApplicationContext());
-        gameButton = (Button)findViewById(R.id.games);
+        tutorialsButton = (Button)findViewById(R.id.tutorials);
         videosButton = (Button)findViewById(R.id.videos);
         testButton = (Button)findViewById(R.id.test);
         header = (NavigationView)findViewById(R.id.nav_view_student);
+        talk_to_naseem = (Button)findViewById(R.id.talk_to_naseem);
         view = header.getHeaderView(0);
         student_username = (TextView)view.findViewById(R.id.studentusername);
         profile_pic = (ImageView)view.findViewById(R.id.studentprofilepic);
         profile_pic_progress = (ProgressBar)view.findViewById(R.id.profilepicprogress);
         student_school_name = (TextView)view.findViewById(R.id.studentschoolname);
         student_section_name = (TextView)view.findViewById(R.id.studentsectionname);
-        gameButton.setOnClickListener(this);
+        tutorialsButton.setOnClickListener(this);
         videosButton.setOnClickListener(this);
         testButton.setOnClickListener(this);
+        talk_to_naseem.setOnClickListener(this);
+        //talk_to_naseem.getBackground().setAlpha(108);
         // Loading bottom sheet
         View v = findViewById(R.id.student_bottom_sheet);
         studentProfileBottomSheet = BottomSheetBehavior.from(v);
@@ -208,6 +215,29 @@ public class Student extends AppCompatActivity implements NavigationView.OnNavig
             //Toast.makeText(getApplicationContext(), "Below MarshMallwo", Toast.LENGTH_LONG).show();
             load_image_from_internal_storage();
         }
+
+        Timer timer = new Timer();
+        MyTimer mt = new MyTimer();
+        timer.schedule(mt, 1000, 1000);
+    }
+
+    class MyTimer extends TimerTask {
+
+        public void run() {
+
+            //This runs in a background thread.
+            //We cannot call the UI from this thread, so we must call the main UI thread and pass a runnable
+            runOnUiThread(new Runnable() {
+
+                public void run() {
+                    Random rand = new Random();
+                    //The random generator creates values between [0,256) for use as RGB values used below to create a random color
+                    //We call the RelativeLayout object and we change the color.  The first parameter in argb() is the alpha.
+                    talk_to_naseem.setTextColor(Color.argb(255, rand.nextInt(256), rand.nextInt(256), rand.nextInt(256) ));
+                }
+            });
+        }
+
     }
 
     @Override
@@ -328,25 +358,29 @@ public class Student extends AppCompatActivity implements NavigationView.OnNavig
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.games: {
-                gameButton.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.user_button_bg_2));
+            case R.id.tutorials: {
+                tutorialsButton.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.user_button_bg_2));
                 videosButton.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.user_button_bg_1));
                 testButton.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.user_button_bg_1));
                 stdViewPager.setCurrentItem(0);
                 break;
             }
             case R.id.videos: {
-                gameButton.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.user_button_bg_1));
+                tutorialsButton.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.user_button_bg_1));
                 videosButton.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.user_button_bg_2));
                 testButton.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.user_button_bg_1));
                 stdViewPager.setCurrentItem(1);
                 break;
             }
             case R.id.test: {
-                gameButton.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.user_button_bg_1));
+                tutorialsButton.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.user_button_bg_1));
                 videosButton.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.user_button_bg_1));
                 testButton.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.user_button_bg_2));
                 stdViewPager.setCurrentItem(2);
+                break;
+            }
+            case R.id.talk_to_naseem:{
+
                 break;
             }
         }
@@ -605,8 +639,8 @@ public class Student extends AppCompatActivity implements NavigationView.OnNavig
         @Override
         public Fragment getItem(int position) {
             if(position == 0) {
-                Games games = new Games();
-                return games;
+                Tutorials tutorials = new Tutorials();
+                return tutorials;
             }
             else if(position == 1){
                 Videos videos = new Videos();

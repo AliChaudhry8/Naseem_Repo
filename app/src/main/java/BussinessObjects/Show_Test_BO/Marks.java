@@ -7,7 +7,7 @@ package BussinessObjects.Show_Test_BO;
 public class Marks {
     private int id;
     private int total;
-    private int obtained;
+    private double obtained;
 
     public Marks(int id, int total, int obtained) {
         this.id = id;
@@ -34,11 +34,11 @@ public class Marks {
         this.total = total;
     }
 
-    public int getObtained() {
+    public double getObtained() {
         return obtained;
     }
 
-    public void setObtained(int obtained) {
+    public void setObtained(double obtained) {
         this.obtained = obtained;
     }
 }

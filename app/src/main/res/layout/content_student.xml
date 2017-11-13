@@ -8,6 +8,16 @@
     tools:context="edu.plan9.naseemdev.naseem.Student"
     tools:showIn="@layout/app_bar_student"
     android:background="@drawable/b3">
+    <Button
+        android:id="@+id/talk_to_naseem"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/talk_to_naseem"
+        android:text="Talk to Naseem"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:textStyle="bold"/>
     <LinearLayout
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
@@ -19,10 +29,10 @@
         android:layout_height="@dimen/student_content_button_layout_height"
         android:weightSum="@integer/user_content_main_button_panel_weight_sum">
         <android.support.v7.widget.AppCompatButton
-            android:id="@+id/games"
+            android:id="@+id/tutorials"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/string_games"
+            android:text="Tutorials"
             android:textStyle="bold"
             android:layout_margin="@dimen/user_content_main_button_panel_margin"
             android:layout_weight="@integer/user_content_main_button_panel_weight"
@@ -53,5 +63,7 @@
         android:id="@+id/stdcontainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_above="@id/talk_to_naseem"/>
+
 </RelativeLayout>

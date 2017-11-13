@@ -66,7 +66,8 @@ public class ShowTest extends AppCompatActivity {
     private LinearLayout reload, load_test;
     private TextView label_text_questions, label_single_choice_questions, label_multi_choice_questions, label_paragraph_questions, label_boolean_questions, obtained_marks, total_marks;
     private View line_text_question, line_single_choice_questions, line_multi_choice_questions, line_paragraph_questions, line_boolean_questions;
-    private int total, obtained;
+    private int total;
+    private double obtained;
     String student_id;
     Bundle bundle;
     TransferUtility transferUtility;

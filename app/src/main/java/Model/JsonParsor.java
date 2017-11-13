@@ -521,7 +521,7 @@ public class JsonParsor {
                 bq.setCorrect(js.getBoolean(Constants.Test_Key_Boolean_Correct));
                 bq.setTest_id(js.getInt(Constants.Test_Key_Generic_Test_Id));
                 bq.setMarks(js.getInt(Constants.Test_Key_Generic_Marks));
-                if(js.getString(Constants.Test_Key_Generic_Std_Answer).equals("True")) {
+                if(js.getString(Constants.Test_Key_Generic_Std_Answer).equals("t")) {
                     bq.setStd_answer(true);
                 }
                 else{

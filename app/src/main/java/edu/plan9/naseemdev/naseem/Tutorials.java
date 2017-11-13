@@ -11,7 +11,6 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -19,36 +18,22 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-import com.google.android.youtube.player.YouTubeInitializationResult;
-import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerSupportFragment;
 import com.srx.widget.PullToLoadView;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
-import BussinessObjects.User_BO;
 import BussinessObjects.Video_BO;
 import Model.Constants;
-import Model.JsonParsor;
+import Model.Load_Tutorials_Paginater;
 import Model.Load_Videos_Paginater;
 import Model.Session;
-import Model.Student.Custom_Video_Thumbnail_Adapter;
-import Model.Teacher.Assign_Group_Paginater;
 
 /**
- * Created by Muhammad Taimoor on 5/16/2017.
+ * Created by DELL on 11/12/2017.
  */
 
-public class Videos extends Fragment {
+public class Tutorials extends Fragment {
     private YouTubePlayerSupportFragment youTubePlayerView_1;
     private ArrayList<Video_BO> video_bos;
     private ListView videos_thumb;
@@ -57,19 +42,19 @@ public class Videos extends Fragment {
     private ImageView reload_video;
     private ProgressDialog progressDialog;
     Session session;
-    public Videos() {}
+    public Tutorials() {}
 
 
     private PullToLoadView pullToLoadVideos;
     private LinearLayout reload_videos_layout;
-    private Load_Videos_Paginater paginater;
+    private Load_Tutorials_Paginater paginater;
     String test_id;
     Button save_student;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-         View rootView = inflater.inflate(R.layout.fragment_videos, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_tutorials, container, false);
         session = new Session(this.getActivity());
-      //  video_bos = new ArrayList<Video_BO>();
+        //  video_bos = new ArrayList<Video_BO>();
         video = (RelativeLayout)rootView.findViewById(R.id.video);
         video.setVisibility(View.INVISIBLE);
         video.setTag("video");
@@ -105,7 +90,7 @@ public class Videos extends Fragment {
 
         pullToLoadVideos = (PullToLoadView)rootView.findViewById(R.id.pull_to_load_videos);
         boolean connected = isConnected();
-        paginater = new Load_Videos_Paginater(getActivity().getApplicationContext(), pullToLoadVideos,this, connected , video);
+        paginater = new Load_Tutorials_Paginater(getActivity().getApplicationContext(), pullToLoadVideos,this, connected , video);
         if(!connected) {
             hide();
             Toast toast = Toast.makeText(getActivity().getApplicationContext(), Constants.Error_Cannot_Load_Students, Toast.LENGTH_LONG);
@@ -145,3 +130,4 @@ public class Videos extends Fragment {
         return  connected;
     }
 }
+

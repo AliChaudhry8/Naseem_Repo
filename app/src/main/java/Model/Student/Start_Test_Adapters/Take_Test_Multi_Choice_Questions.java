@@ -98,26 +98,26 @@ public class Take_Test_Multi_Choice_Questions extends BaseExpandableListAdapter 
                 if(rb.isChecked()){
                     if(mco.isChecked()){
                         mco.setChecked(false);
-                        multiChoiceQuestions.get(i).getStd_answer().remove(i1);
+                        multiChoiceQuestions.get(i).getStd_answer().remove(mco.getId());
                         notifyDataSetChanged();
                     }
                     else{
                         mco.setChecked(true);
-                        multiChoiceQuestions.get(i).getStd_answer().add(""+(i1));
+                        multiChoiceQuestions.get(i).getStd_answer().add(""+(mco.getId()));
                         notifyDataSetChanged();
                     }
                 }
                 else {
                     if(mco.isChecked()){
                         mco.setChecked(false);
-                        multiChoiceQuestions.get(i).getStd_answer().remove(i1);
+                        multiChoiceQuestions.get(i).getStd_answer().remove(mco.getId());
                         notifyDataSetChanged();
                     }
                     else{
                         mco.setChecked(true);
                         try {
 
-                            multiChoiceQuestions.get(i).getStd_answer().add(""+(i1));
+                            multiChoiceQuestions.get(i).getStd_answer().add(""+(mco.getId()));
 
                         }catch (Exception e){
                             e.toString();

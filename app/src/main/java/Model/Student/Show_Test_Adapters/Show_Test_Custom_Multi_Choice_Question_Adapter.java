@@ -91,27 +91,33 @@ public class Show_Test_Custom_Multi_Choice_Question_Adapter extends BaseExpandab
         correct = correct.substring(0, correct.length()-2);
         answer.setText("Correct: " + correct);
 
+        int counter = 0 , counter_extra = 0;
         Marks m = new Marks();
         m.setId(mcq.getId());
         m.setTotal(mcq.getMarks());
-        if(set_answer.size() == std_answer.size()){
+       // if(set_answer.size() == std_answer.size()){
             for(int k=0; k<set_answer.size(); k++){
-                if(set_answer.contains(Integer.parseInt(std_answer.get(k)))){
-                    flag = true;
-                }
-                else {
-                    flag = false;
+                if(k < std_answer.size()) {
+                    if (set_answer.contains(Integer.parseInt(std_answer.get(k)))) {
+                        counter++;
+                        //flag = true;
+                    }
                 }
             }
-        }
-        else {
-            flag = false;
-        }
+            if(std_answer.size() > set_answer.size()){
+                counter_extra = std_answer.size() - set_answer.size();
+            }
+        //}
+        //else {
+          //  flag = false;
+        //}
 
-        if(flag){
-            m.setObtained(mcq.getMarks());
-            marks.setText(mcq.getMarks()+"/"+mcq.getMarks());
-
+        if(counter > 0){
+            double obtained_marks = ((double) counter/(double) set_answer.size())*(double) mcq.getMarks();
+            double extras = ((double) counter_extra/(double) set_answer.size())*(double) mcq.getMarks();
+            obtained_marks = obtained_marks - extras;
+            m.setObtained(obtained_marks);
+            marks.setText(obtained_marks+"/"+mcq.getMarks());
         }
         else {
             m.setObtained(0);
