@@ -512,7 +512,7 @@ public class ShowTest extends AppCompatActivity {
         // Initialize the Amazon Cognito credentials provider
         CognitoCachingCredentialsProvider credentialsProvider = new CognitoCachingCredentialsProvider(
                 getApplicationContext(),
-                "us-west-2:687a499c-965c-4185-9b6a-8e72af76cf36", // Identity Pool ID
+                "", // Identity Pool ID
                 Regions.US_WEST_2 // Region
         );
 
